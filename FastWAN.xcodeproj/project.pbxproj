@@ -7,13 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292912BB28869E85000C0435 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912BA28869E84000C0435 /* AvatarView.swift */; };
+		292912C02886B42E000C0435 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912BF2886B42E000C0435 /* Color.swift */; };
+		292912C32886C3BC000C0435 /* AdaptiveSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912C22886C3BC000C0435 /* AdaptiveSheet.swift */; };
+		292912C72886E130000C0435 /* Upload_ID_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912C62886E130000C0435 /* Upload_ID_View.swift */; };
+		292912C92886F240000C0435 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912C82886F23F000C0435 /* NavigationConfigurator.swift */; };
+		292912CB2886F7FC000C0435 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912CA2886F7FC000C0435 /* FunctionView.swift */; };
+		292912CD2886F849000C0435 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912CC2886F848000C0435 /* ResetPasswordView.swift */; };
+		292912CF2886FCD0000C0435 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912CE2886FCD0000C0435 /* OrderDetailView.swift */; };
+		29389BA6289399FD00DEFDF2 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 29389BA5289399FD00DEFDF2 /* AlertToast */; };
+		29389BA82893A23600DEFDF2 /* LoginCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BA72893A23600DEFDF2 /* LoginCore.swift */; };
+		29389BAE2893CADC00DEFDF2 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BAD2893CADC00DEFDF2 /* LoginModel.swift */; };
+		29389BB42893E1DC00DEFDF2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BB32893E1DC00DEFDF2 /* UserManager.swift */; };
+		29389BB72893E6F400DEFDF2 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BB62893E6F400DEFDF2 /* Storage.swift */; };
+		29389BBA2894180900DEFDF2 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BB92894180900DEFDF2 /* Onboarding.swift */; };
+		29389BBD2894383300DEFDF2 /* AvatarCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BBC2894383300DEFDF2 /* AvatarCore.swift */; };
+		29389BBF28943B7800DEFDF2 /* Provider+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BBE28943B7800DEFDF2 /* Provider+User.swift */; };
+		29389BC128943CF600DEFDF2 /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BC028943CF600DEFDF2 /* UserClient.swift */; };
+		29389BC32894434A00DEFDF2 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BC22894434900DEFDF2 /* ImagePickerView.swift */; };
+		29389BC62895177A00DEFDF2 /* Upload_ID_Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BC52895177A00DEFDF2 /* Upload_ID_Core.swift */; };
+		29389BCC2896392400DEFDF2 /* ResetPasswordCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BCB2896392400DEFDF2 /* ResetPasswordCore.swift */; };
+		29389BCE289648C000DEFDF2 /* Provider+Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BCD289648C000DEFDF2 /* Provider+Product.swift */; };
+		29389BD0289649DE00DEFDF2 /* ProductClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BCF289649DE00DEFDF2 /* ProductClient.swift */; };
+		29389BD228964B6700DEFDF2 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BD128964B6700DEFDF2 /* ProductModel.swift */; };
+		29389BD5289676EA00DEFDF2 /* Qiniu in Frameworks */ = {isa = PBXBuildFile; productRef = 29389BD4289676EA00DEFDF2 /* Qiniu */; };
+		29389BD82896770C00DEFDF2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 29389BD72896770C00DEFDF2 /* Kingfisher */; };
+		29389BDB28967AF900DEFDF2 /* MakeOrderCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BDA28967AF900DEFDF2 /* MakeOrderCore.swift */; };
+		2957E0B2289E5E70007E21DE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0B1289E5E70007E21DE /* WebView.swift */; };
+		2957E0B4289E74BC007E21DE /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0B3289E74BC007E21DE /* Foundation.swift */; };
+		2957E0B8289F8031007E21DE /* SignAgreementCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0B7289F8031007E21DE /* SignAgreementCore.swift */; };
+		2957E0BA289FB7D6007E21DE /* UserAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0B9289FB7D6007E21DE /* UserAuthModel.swift */; };
+		2957E0C0289FBD34007E21DE /* FastWANTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0BF289FBD34007E21DE /* FastWANTests.swift */; };
+		2957E0C3289FBD44007E21DE /* FastWANUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0C1289FBD44007E21DE /* FastWANUITests.swift */; };
+		2957E0C4289FBD44007E21DE /* FastWANUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0C2289FBD44007E21DE /* FastWANUITestsLaunchTests.swift */; };
+		2957E0C7289FC0FD007E21DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2957E0C5289FBF87007E21DE /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2957E0C9289FE752007E21DE /* PickThreadCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0C8289FE752007E21DE /* PickThreadCore.swift */; };
+		295985A82890395D00922BBE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 295985A72890395D00922BBE /* ComposableArchitecture */; };
+		295B5796288D382C0028E27F /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 295B5795288D382C0028E27F /* QGrid */; };
+		295B5799288D388E0028E27F /* ThreadProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295B5798288D388E0028E27F /* ThreadProperty.swift */; };
+		295B579C288D7C760028E27F /* PickThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295B579B288D7C760028E27F /* PickThreadView.swift */; };
+		295B579E288D7E460028E27F /* ThreadMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295B579D288D7E460028E27F /* ThreadMark.swift */; };
 		295BEA72287DACCB005E8130 /* FastWANApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295BEA71287DACCB005E8130 /* FastWANApp.swift */; };
 		295BEA74287DACCB005E8130 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295BEA73287DACCB005E8130 /* ContentView.swift */; };
 		295BEA76287DACCE005E8130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295BEA75287DACCE005E8130 /* Assets.xcassets */; };
 		295BEA79287DACCE005E8130 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 295BEA78287DACCE005E8130 /* Preview Assets.xcassets */; };
-		295BEA83287DACCE005E8130 /* FastWANTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295BEA82287DACCE005E8130 /* FastWANTests.swift */; };
-		295BEA8D287DACCF005E8130 /* FastWANUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295BEA8C287DACCF005E8130 /* FastWANUITests.swift */; };
-		295BEA8F287DACCF005E8130 /* FastWANUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295BEA8E287DACCF005E8130 /* FastWANUITestsLaunchTests.swift */; };
+		295BEA9E287DB29C005E8130 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295BEA9D287DB29B005E8130 /* LoginView.swift */; };
+		295F2F332898289E00BA41A1 /* QNImageUper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2F322898289E00BA41A1 /* QNImageUper.swift */; };
+		295F2F352898346900BA41A1 /* UploadTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2F342898346900BA41A1 /* UploadTokenModel.swift */; };
+		29684B70289240E700948CB8 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B6F289240E700948CB8 /* RegisterModel.swift */; };
+		29684B732892596700948CB8 /* ProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B722892596700948CB8 /* ProviderError.swift */; };
+		29684B752892598700948CB8 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B742892598700948CB8 /* Provider.swift */; };
+		29684B77289259FF00948CB8 /* Provider+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B76289259FF00948CB8 /* Provider+Register.swift */; };
+		29684B7D28925C5700948CB8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B7C28925C5700948CB8 /* Environment.swift */; };
+		29684B8028925D2E00948CB8 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B7F28925D2E00948CB8 /* ErrorUtility.swift */; };
+		29684B862892642E00948CB8 /* RegisterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B852892642E00948CB8 /* RegisterClient.swift */; };
+		29684B8A289266C200948CB8 /* RegisterCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B89289266C200948CB8 /* RegisterCore.swift */; };
+		29684B8C28927EDE00948CB8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B8B28927EDE00948CB8 /* ActivityIndicator.swift */; };
+		29684B902892D0B900948CB8 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B8E2892D0B800948CB8 /* NetworkEnvironment.swift */; };
+		29684B912892D0B900948CB8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B8F2892D0B900948CB8 /* Router.swift */; };
+		2975AA242887A578006AD4EC /* MakeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975AA232887A578006AD4EC /* MakeOrderView.swift */; };
+		2975AA2728885365006AD4EC /* PackageMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975AA2628885365006AD4EC /* PackageMark.swift */; };
+		2978DE3E2889AD1E001DD7FD /* SignAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978DE3D2889AD1E001DD7FD /* SignAgreementView.swift */; };
+		29AB45A92882AABE00B26E4F /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB45A82882AABD00B26E4F /* RegisterView.swift */; };
+		29AB45AB2882DD8800B26E4F /* AgreementAndPrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB45AA2882DD8700B26E4F /* AgreementAndPrivacyPolicyView.swift */; };
+		29AB45AE2883DB1500B26E4F /* UserCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB45AD2883DB1500B26E4F /* UserCenterView.swift */; };
+		29AB45B22883F5F500B26E4F /* UserCenterRowMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB45B12883F5F400B26E4F /* UserCenterRowMark.swift */; };
+		29B6097D288BF2A400A8B5ED /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6097C288BF2A400A8B5ED /* Canvas.swift */; };
+		29B60980288BFE2100A8B5ED /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6097F288BFE2100A8B5ED /* MainPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +94,72 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		292912BA28869E84000C0435 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		292912BF2886B42E000C0435 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		292912C22886C3BC000C0435 /* AdaptiveSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveSheet.swift; sourceTree = "<group>"; };
+		292912C62886E130000C0435 /* Upload_ID_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload_ID_View.swift; sourceTree = "<group>"; };
+		292912C82886F23F000C0435 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
+		292912CA2886F7FC000C0435 /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
+		292912CC2886F848000C0435 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		292912CE2886FCD0000C0435 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		29389BA72893A23600DEFDF2 /* LoginCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCore.swift; sourceTree = "<group>"; };
+		29389BAD2893CADC00DEFDF2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		29389BB32893E1DC00DEFDF2 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		29389BB62893E6F400DEFDF2 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		29389BB92894180900DEFDF2 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		29389BBC2894383300DEFDF2 /* AvatarCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCore.swift; sourceTree = "<group>"; };
+		29389BBE28943B7800DEFDF2 /* Provider+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+User.swift"; sourceTree = "<group>"; };
+		29389BC028943CF600DEFDF2 /* UserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
+		29389BC22894434900DEFDF2 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		29389BC52895177A00DEFDF2 /* Upload_ID_Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload_ID_Core.swift; sourceTree = "<group>"; };
+		29389BCB2896392400DEFDF2 /* ResetPasswordCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCore.swift; sourceTree = "<group>"; };
+		29389BCD289648C000DEFDF2 /* Provider+Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+Product.swift"; sourceTree = "<group>"; };
+		29389BCF289649DE00DEFDF2 /* ProductClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductClient.swift; sourceTree = "<group>"; };
+		29389BD128964B6700DEFDF2 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		29389BDA28967AF900DEFDF2 /* MakeOrderCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderCore.swift; sourceTree = "<group>"; };
+		2957E0B1289E5E70007E21DE /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		2957E0B3289E74BC007E21DE /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		2957E0B7289F8031007E21DE /* SignAgreementCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAgreementCore.swift; sourceTree = "<group>"; };
+		2957E0B9289FB7D6007E21DE /* UserAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthModel.swift; sourceTree = "<group>"; };
+		2957E0BF289FBD34007E21DE /* FastWANTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastWANTests.swift; sourceTree = "<group>"; };
+		2957E0C1289FBD44007E21DE /* FastWANUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastWANUITests.swift; sourceTree = "<group>"; };
+		2957E0C2289FBD44007E21DE /* FastWANUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastWANUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2957E0C5289FBF87007E21DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2957E0C8289FE752007E21DE /* PickThreadCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickThreadCore.swift; sourceTree = "<group>"; };
+		295B5798288D388E0028E27F /* ThreadProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadProperty.swift; sourceTree = "<group>"; };
+		295B579B288D7C760028E27F /* PickThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickThreadView.swift; sourceTree = "<group>"; };
+		295B579D288D7E460028E27F /* ThreadMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadMark.swift; sourceTree = "<group>"; };
 		295BEA6E287DACCB005E8130 /* FastWAN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastWAN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		295BEA71287DACCB005E8130 /* FastWANApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastWANApp.swift; sourceTree = "<group>"; };
 		295BEA73287DACCB005E8130 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		295BEA75287DACCE005E8130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		295BEA78287DACCE005E8130 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		295BEA7E287DACCE005E8130 /* FastWANTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastWANTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		295BEA82287DACCE005E8130 /* FastWANTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastWANTests.swift; sourceTree = "<group>"; };
 		295BEA88287DACCF005E8130 /* FastWANUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastWANUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		295BEA8C287DACCF005E8130 /* FastWANUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastWANUITests.swift; sourceTree = "<group>"; };
-		295BEA8E287DACCF005E8130 /* FastWANUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastWANUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		295BEA9D287DB29B005E8130 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		295F2F322898289E00BA41A1 /* QNImageUper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNImageUper.swift; sourceTree = "<group>"; };
+		295F2F342898346900BA41A1 /* UploadTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTokenModel.swift; sourceTree = "<group>"; };
+		29684B6F289240E700948CB8 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		29684B722892596700948CB8 /* ProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderError.swift; sourceTree = "<group>"; };
+		29684B742892598700948CB8 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		29684B76289259FF00948CB8 /* Provider+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Provider+Register.swift"; sourceTree = "<group>"; };
+		29684B7C28925C5700948CB8 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		29684B7F28925D2E00948CB8 /* ErrorUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUtility.swift; sourceTree = "<group>"; };
+		29684B852892642E00948CB8 /* RegisterClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterClient.swift; sourceTree = "<group>"; };
+		29684B89289266C200948CB8 /* RegisterCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCore.swift; sourceTree = "<group>"; };
+		29684B8B28927EDE00948CB8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		29684B8D2892C7C600948CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		29684B8E2892D0B800948CB8 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkEnvironment.swift; path = "FastWAN/Networking/New Group/NetworkEnvironment.swift"; sourceTree = SOURCE_ROOT; };
+		29684B8F2892D0B900948CB8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = "FastWAN/Networking/New Group/Router.swift"; sourceTree = SOURCE_ROOT; };
+		2975AA232887A578006AD4EC /* MakeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderView.swift; sourceTree = "<group>"; };
+		2975AA2628885365006AD4EC /* PackageMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageMark.swift; sourceTree = "<group>"; };
+		2978DE3D2889AD1E001DD7FD /* SignAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAgreementView.swift; sourceTree = "<group>"; };
+		29AB45A82882AABD00B26E4F /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		29AB45AA2882DD8700B26E4F /* AgreementAndPrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementAndPrivacyPolicyView.swift; sourceTree = "<group>"; };
+		29AB45AD2883DB1500B26E4F /* UserCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterView.swift; sourceTree = "<group>"; };
+		29AB45B12883F5F400B26E4F /* UserCenterRowMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterRowMark.swift; sourceTree = "<group>"; };
+		29B6097C288BF2A400A8B5ED /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		29B6097F288BFE2100A8B5ED /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +167,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2957E0C7289FC0FD007E21DE /* XCTest.framework in Frameworks */,
+				29389BA6289399FD00DEFDF2 /* AlertToast in Frameworks */,
+				295985A82890395D00922BBE /* ComposableArchitecture in Frameworks */,
+				295B5796288D382C0028E27F /* QGrid in Frameworks */,
+				29389BD5289676EA00DEFDF2 /* Qiniu in Frameworks */,
+				29389BD82896770C00DEFDF2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +193,136 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		292912BC2886AED7000C0435 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				29AB45AA2882DD8700B26E4F /* AgreementAndPrivacyPolicyView.swift */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
+		292912BD2886B3FA000C0435 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				295F2F312898287600BA41A1 /* QiNiuImageUper */,
+				29389BB52893E6E900DEFDF2 /* Storage */,
+				292912C12886C37E000C0435 /* View */,
+				292912BE2886B41A000C0435 /* Extensions */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		292912BE2886B41A000C0435 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				292912BF2886B42E000C0435 /* Color.swift */,
+				2957E0B3289E74BC007E21DE /* Foundation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		292912C12886C37E000C0435 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				292912CA2886F7FC000C0435 /* FunctionView.swift */,
+				292912C22886C3BC000C0435 /* AdaptiveSheet.swift */,
+				292912C82886F23F000C0435 /* NavigationConfigurator.swift */,
+				29B6097C288BF2A400A8B5ED /* Canvas.swift */,
+				29684B8B28927EDE00948CB8 /* ActivityIndicator.swift */,
+				2957E0B1289E5E70007E21DE /* WebView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29389BA4289399FD00DEFDF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2957E0C5289FBF87007E21DE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29389BB52893E6E900DEFDF2 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				29389BB62893E6F400DEFDF2 /* Storage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		29389BB8289417FD00DEFDF2 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				29389BB92894180900DEFDF2 /* Onboarding.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		29389BBB2894381800DEFDF2 /* AvatarView */ = {
+			isa = PBXGroup;
+			children = (
+				292912BA28869E84000C0435 /* AvatarView.swift */,
+				29389BBC2894383300DEFDF2 /* AvatarCore.swift */,
+				29389BC22894434900DEFDF2 /* ImagePickerView.swift */,
+			);
+			path = AvatarView;
+			sourceTree = "<group>";
+		};
+		29389BC42895175700DEFDF2 /* UploadIDView */ = {
+			isa = PBXGroup;
+			children = (
+				292912C62886E130000C0435 /* Upload_ID_View.swift */,
+				29389BC52895177A00DEFDF2 /* Upload_ID_Core.swift */,
+			);
+			path = UploadIDView;
+			sourceTree = "<group>";
+		};
+		29389BC92896390200DEFDF2 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				292912CC2886F848000C0435 /* ResetPasswordView.swift */,
+				29389BCB2896392400DEFDF2 /* ResetPasswordCore.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		29389BD928967ADC00DEFDF2 /* MakeOrder */ = {
+			isa = PBXGroup;
+			children = (
+				2975AA232887A578006AD4EC /* MakeOrderView.swift */,
+				29389BDA28967AF900DEFDF2 /* MakeOrderCore.swift */,
+			);
+			path = MakeOrder;
+			sourceTree = "<group>";
+		};
+		2957E0B5289F7FFE007E21DE /* SignAgreementView */ = {
+			isa = PBXGroup;
+			children = (
+				2978DE3D2889AD1E001DD7FD /* SignAgreementView.swift */,
+				2957E0B7289F8031007E21DE /* SignAgreementCore.swift */,
+			);
+			path = SignAgreementView;
+			sourceTree = "<group>";
+		};
+		295B5797288D387D0028E27F /* PickThreadView */ = {
+			isa = PBXGroup;
+			children = (
+				295B579B288D7C760028E27F /* PickThreadView.swift */,
+				2957E0C8289FE752007E21DE /* PickThreadCore.swift */,
+				295B5798288D388E0028E27F /* ThreadProperty.swift */,
+				295B579D288D7E460028E27F /* ThreadMark.swift */,
+			);
+			path = PickThreadView;
+			sourceTree = "<group>";
+		};
+		295B579A288D7C580028E27F /* MainPageView */ = {
+			isa = PBXGroup;
+			children = (
+				29B6097F288BFE2100A8B5ED /* MainPageView.swift */,
+			);
+			path = MainPageView;
+			sourceTree = "<group>";
+		};
 		295BEA65287DACCB005E8130 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +330,7 @@
 				295BEA81287DACCE005E8130 /* FastWANTests */,
 				295BEA8B287DACCF005E8130 /* FastWANUITests */,
 				295BEA6F287DACCB005E8130 /* Products */,
+				29389BA4289399FD00DEFDF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +347,16 @@
 		295BEA70287DACCB005E8130 /* FastWAN */ = {
 			isa = PBXGroup;
 			children = (
+				29684B8D2892C7C600948CB8 /* Info.plist */,
+				29684B7B28925C4C00948CB8 /* Utility */,
+				29F62C47288EF2FE00B31ACC /* Networking */,
 				295BEA71287DACCB005E8130 /* FastWANApp.swift */,
 				295BEA73287DACCB005E8130 /* ContentView.swift */,
+				29389BB8289417FD00DEFDF2 /* Root */,
+				29B6097E288BFE0A00A8B5ED /* Main */,
+				295BEA9B287DB276005E8130 /* LoginStack */,
+				29AB45AC2883DAF200B26E4F /* UserCenter */,
+				292912BD2886B3FA000C0435 /* Support */,
 				295BEA75287DACCE005E8130 /* Assets.xcassets */,
 				295BEA77287DACCE005E8130 /* Preview Content */,
 			);
@@ -113,7 +374,7 @@
 		295BEA81287DACCE005E8130 /* FastWANTests */ = {
 			isa = PBXGroup;
 			children = (
-				295BEA82287DACCE005E8130 /* FastWANTests.swift */,
+				2957E0BF289FBD34007E21DE /* FastWANTests.swift */,
 			);
 			path = FastWANTests;
 			sourceTree = "<group>";
@@ -121,10 +382,151 @@
 		295BEA8B287DACCF005E8130 /* FastWANUITests */ = {
 			isa = PBXGroup;
 			children = (
-				295BEA8C287DACCF005E8130 /* FastWANUITests.swift */,
-				295BEA8E287DACCF005E8130 /* FastWANUITestsLaunchTests.swift */,
+				2957E0C1289FBD44007E21DE /* FastWANUITests.swift */,
+				2957E0C2289FBD44007E21DE /* FastWANUITestsLaunchTests.swift */,
 			);
 			path = FastWANUITests;
+			sourceTree = "<group>";
+		};
+		295BEA9B287DB276005E8130 /* LoginStack */ = {
+			isa = PBXGroup;
+			children = (
+				29684B872892663B00948CB8 /* LoginView */,
+				29684B882892664800948CB8 /* Register */,
+				292912BC2886AED7000C0435 /* PrivacyPolicy */,
+			);
+			path = LoginStack;
+			sourceTree = "<group>";
+		};
+		295F2F312898287600BA41A1 /* QiNiuImageUper */ = {
+			isa = PBXGroup;
+			children = (
+				295F2F322898289E00BA41A1 /* QNImageUper.swift */,
+			);
+			path = QiNiuImageUper;
+			sourceTree = "<group>";
+		};
+		29684B712892595B00948CB8 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				29684B742892598700948CB8 /* Provider.swift */,
+				29684B722892596700948CB8 /* ProviderError.swift */,
+				29684B76289259FF00948CB8 /* Provider+Register.swift */,
+				29389BBE28943B7800DEFDF2 /* Provider+User.swift */,
+				29389BCD289648C000DEFDF2 /* Provider+Product.swift */,
+				29684B7828925A6900948CB8 /* Router */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		29684B7828925A6900948CB8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				29684B8F2892D0B900948CB8 /* Router.swift */,
+				29684B8E2892D0B800948CB8 /* NetworkEnvironment.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		29684B7B28925C4C00948CB8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				29684B7C28925C5700948CB8 /* Environment.swift */,
+				29684B7F28925D2E00948CB8 /* ErrorUtility.swift */,
+				29389BB32893E1DC00DEFDF2 /* UserManager.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		29684B832892628600948CB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				29684B6F289240E700948CB8 /* RegisterModel.swift */,
+				29389BAD2893CADC00DEFDF2 /* LoginModel.swift */,
+				29389BD128964B6700DEFDF2 /* ProductModel.swift */,
+				295F2F342898346900BA41A1 /* UploadTokenModel.swift */,
+				2957E0B9289FB7D6007E21DE /* UserAuthModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		29684B842892640700948CB8 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				29684B852892642E00948CB8 /* RegisterClient.swift */,
+				29389BC028943CF600DEFDF2 /* UserClient.swift */,
+				29389BCF289649DE00DEFDF2 /* ProductClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		29684B872892663B00948CB8 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				295BEA9D287DB29B005E8130 /* LoginView.swift */,
+				29389BA72893A23600DEFDF2 /* LoginCore.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		29684B882892664800948CB8 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				29AB45A82882AABD00B26E4F /* RegisterView.swift */,
+				29684B89289266C200948CB8 /* RegisterCore.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		29AB45AC2883DAF200B26E4F /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				2957E0B5289F7FFE007E21DE /* SignAgreementView */,
+				29389BD928967ADC00DEFDF2 /* MakeOrder */,
+				29389BC92896390200DEFDF2 /* ResetPassword */,
+				29389BC42895175700DEFDF2 /* UploadIDView */,
+				29389BBB2894381800DEFDF2 /* AvatarView */,
+				29AB45AF2883F57500B26E4F /* View */,
+				29AB45B02883F58000B26E4F /* Model */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		29AB45AF2883F57500B26E4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29AB45AD2883DB1500B26E4F /* UserCenterView.swift */,
+				292912CE2886FCD0000C0435 /* OrderDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29AB45B02883F58000B26E4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				29AB45B12883F5F400B26E4F /* UserCenterRowMark.swift */,
+				2975AA2628885365006AD4EC /* PackageMark.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		29B6097E288BFE0A00A8B5ED /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				295B579A288D7C580028E27F /* MainPageView */,
+				295B5797288D387D0028E27F /* PickThreadView */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		29F62C47288EF2FE00B31ACC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				29684B842892640700948CB8 /* Client */,
+				29684B712892595B00948CB8 /* Provider */,
+				29684B832892628600948CB8 /* Model */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +545,13 @@
 			dependencies = (
 			);
 			name = FastWAN;
+			packageProductDependencies = (
+				295B5795288D382C0028E27F /* QGrid */,
+				295985A72890395D00922BBE /* ComposableArchitecture */,
+				29389BA5289399FD00DEFDF2 /* AlertToast */,
+				29389BD4289676EA00DEFDF2 /* Qiniu */,
+				29389BD72896770C00DEFDF2 /* Kingfisher */,
+			);
 			productName = FastWAN;
 			productReference = 295BEA6E287DACCB005E8130 /* FastWAN.app */;
 			productType = "com.apple.product-type.application";
@@ -198,10 +607,12 @@
 					};
 					295BEA7D287DACCE005E8130 = {
 						CreatedOnToolsVersion = 13.2;
+						LastSwiftMigration = 1320;
 						TestTargetID = 295BEA6D287DACCB005E8130;
 					};
 					295BEA87287DACCF005E8130 = {
 						CreatedOnToolsVersion = 13.2;
+						LastSwiftMigration = 1320;
 						TestTargetID = 295BEA6D287DACCB005E8130;
 					};
 				};
@@ -215,6 +626,13 @@
 				Base,
 			);
 			mainGroup = 295BEA65287DACCB005E8130;
+			packageReferences = (
+				295B5794288D382C0028E27F /* XCRemoteSwiftPackageReference "QGrid" */,
+				295985A62890395D00922BBE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				29389BA328938DE900DEFDF2 /* XCRemoteSwiftPackageReference "AlertToast" */,
+				29389BD3289676E900DEFDF2 /* XCRemoteSwiftPackageReference "objc-sdk" */,
+				29389BD62896770C00DEFDF2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 295BEA6F287DACCB005E8130 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +675,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295BEA9E287DB29C005E8130 /* LoginView.swift in Sources */,
+				29684B8A289266C200948CB8 /* RegisterCore.swift in Sources */,
+				29389BB42893E1DC00DEFDF2 /* UserManager.swift in Sources */,
+				29389BBD2894383300DEFDF2 /* AvatarCore.swift in Sources */,
+				29389BB72893E6F400DEFDF2 /* Storage.swift in Sources */,
+				29684B912892D0B900948CB8 /* Router.swift in Sources */,
+				2957E0B4289E74BC007E21DE /* Foundation.swift in Sources */,
+				29AB45A92882AABE00B26E4F /* RegisterView.swift in Sources */,
+				29389BD0289649DE00DEFDF2 /* ProductClient.swift in Sources */,
+				29B60980288BFE2100A8B5ED /* MainPageView.swift in Sources */,
+				29AB45AE2883DB1500B26E4F /* UserCenterView.swift in Sources */,
+				295F2F332898289E00BA41A1 /* QNImageUper.swift in Sources */,
+				2975AA242887A578006AD4EC /* MakeOrderView.swift in Sources */,
+				29684B77289259FF00948CB8 /* Provider+Register.swift in Sources */,
+				2957E0B8289F8031007E21DE /* SignAgreementCore.swift in Sources */,
+				292912CD2886F849000C0435 /* ResetPasswordView.swift in Sources */,
+				29389BC32894434A00DEFDF2 /* ImagePickerView.swift in Sources */,
+				29684B862892642E00948CB8 /* RegisterClient.swift in Sources */,
+				29AB45AB2882DD8800B26E4F /* AgreementAndPrivacyPolicyView.swift in Sources */,
+				29684B8C28927EDE00948CB8 /* ActivityIndicator.swift in Sources */,
+				2957E0BA289FB7D6007E21DE /* UserAuthModel.swift in Sources */,
+				29389BBF28943B7800DEFDF2 /* Provider+User.swift in Sources */,
+				29389BA82893A23600DEFDF2 /* LoginCore.swift in Sources */,
+				29684B70289240E700948CB8 /* RegisterModel.swift in Sources */,
 				295BEA74287DACCB005E8130 /* ContentView.swift in Sources */,
+				292912C32886C3BC000C0435 /* AdaptiveSheet.swift in Sources */,
+				295B579E288D7E460028E27F /* ThreadMark.swift in Sources */,
+				292912BB28869E85000C0435 /* AvatarView.swift in Sources */,
+				2975AA2728885365006AD4EC /* PackageMark.swift in Sources */,
+				29389BBA2894180900DEFDF2 /* Onboarding.swift in Sources */,
+				295B579C288D7C760028E27F /* PickThreadView.swift in Sources */,
+				2957E0C9289FE752007E21DE /* PickThreadCore.swift in Sources */,
+				29389BC128943CF600DEFDF2 /* UserClient.swift in Sources */,
+				29AB45B22883F5F500B26E4F /* UserCenterRowMark.swift in Sources */,
+				29684B902892D0B900948CB8 /* NetworkEnvironment.swift in Sources */,
 				295BEA72287DACCB005E8130 /* FastWANApp.swift in Sources */,
+				29389BD228964B6700DEFDF2 /* ProductModel.swift in Sources */,
+				29684B752892598700948CB8 /* Provider.swift in Sources */,
+				29B6097D288BF2A400A8B5ED /* Canvas.swift in Sources */,
+				29389BCE289648C000DEFDF2 /* Provider+Product.swift in Sources */,
+				29389BC62895177A00DEFDF2 /* Upload_ID_Core.swift in Sources */,
+				29684B7D28925C5700948CB8 /* Environment.swift in Sources */,
+				295F2F352898346900BA41A1 /* UploadTokenModel.swift in Sources */,
+				2978DE3E2889AD1E001DD7FD /* SignAgreementView.swift in Sources */,
+				292912C02886B42E000C0435 /* Color.swift in Sources */,
+				2957E0B2289E5E70007E21DE /* WebView.swift in Sources */,
+				29389BDB28967AF900DEFDF2 /* MakeOrderCore.swift in Sources */,
+				295B5799288D388E0028E27F /* ThreadProperty.swift in Sources */,
+				29684B732892596700948CB8 /* ProviderError.swift in Sources */,
+				292912CB2886F7FC000C0435 /* FunctionView.swift in Sources */,
+				29389BCC2896392400DEFDF2 /* ResetPasswordCore.swift in Sources */,
+				292912C92886F240000C0435 /* NavigationConfigurator.swift in Sources */,
+				29684B8028925D2E00948CB8 /* ErrorUtility.swift in Sources */,
+				292912C72886E130000C0435 /* Upload_ID_View.swift in Sources */,
+				292912CF2886FCD0000C0435 /* OrderDetailView.swift in Sources */,
+				29389BAE2893CADC00DEFDF2 /* LoginModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +738,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				295BEA83287DACCE005E8130 /* FastWANTests.swift in Sources */,
+				2957E0C0289FBD34007E21DE /* FastWANTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +746,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				295BEA8D287DACCF005E8130 /* FastWANUITests.swift in Sources */,
-				295BEA8F287DACCF005E8130 /* FastWANUITestsLaunchTests.swift in Sources */,
+				2957E0C3289FBD44007E21DE /* FastWANUITests.swift in Sources */,
+				2957E0C4289FBD44007E21DE /* FastWANUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +893,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FastWAN/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FastWAN/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +922,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FastWAN/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FastWAN/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -472,14 +946,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Modao.FastWANTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastWAN.app/FastWAN";
@@ -491,10 +972,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Modao.FastWANTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,13 +996,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Modao.FastWANUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FastWAN;
@@ -526,9 +1020,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Modao.FastWANUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -579,6 +1079,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29389BA328938DE900DEFDF2 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		29389BD3289676E900DEFDF2 /* XCRemoteSwiftPackageReference "objc-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/qiniu/objc-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		29389BD62896770C00DEFDF2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		295985A62890395D00922BBE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+		295B5794288D382C0028E27F /* XCRemoteSwiftPackageReference "QGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Q-Mobile/QGrid";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29389BA5289399FD00DEFDF2 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29389BA328938DE900DEFDF2 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+		29389BD4289676EA00DEFDF2 /* Qiniu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29389BD3289676E900DEFDF2 /* XCRemoteSwiftPackageReference "objc-sdk" */;
+			productName = Qiniu;
+		};
+		29389BD72896770C00DEFDF2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29389BD62896770C00DEFDF2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		295985A72890395D00922BBE /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 295985A62890395D00922BBE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		295B5795288D382C0028E27F /* QGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 295B5794288D382C0028E27F /* XCRemoteSwiftPackageReference "QGrid" */;
+			productName = QGrid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 295BEA66287DACCB005E8130 /* Project object */;
 }

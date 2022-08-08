@@ -1,0 +1,115 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AlertToast",
+        "repositoryURL": "https://github.com/elai950/AlertToast",
+        "state": {
+          "branch": null,
+          "revision": "a4f4267f6454259ba4ed8f9dadb87334a789c26c",
+          "version": "1.3.7"
+        }
+      },
+      {
+        "package": "combine-schedulers",
+        "repositoryURL": "https://github.com/pointfreeco/combine-schedulers",
+        "state": {
+          "branch": null,
+          "revision": "0ba3a562716efabb585ccb169450c5389107286b",
+          "version": "0.6.0"
+        }
+      },
+      {
+        "package": "HappyDNS",
+        "repositoryURL": "https://github.com/qiniu/happy-dns-objc",
+        "state": {
+          "branch": null,
+          "revision": "4cabed4f32a2c26bf81f15422190f7fd21a2916a",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": "master",
+          "revision": "2231f92b5af71c78ad2c1450e583bf4a8713b951",
+          "version": null
+        }
+      },
+      {
+        "package": "Qiniu",
+        "repositoryURL": "https://github.com/qiniu/objc-sdk",
+        "state": {
+          "branch": "master",
+          "revision": "d073363a449d8237b64e01641e1bc7f46111089d",
+          "version": null
+        }
+      },
+      {
+        "package": "QGrid",
+        "repositoryURL": "https://github.com/Q-Mobile/QGrid",
+        "state": {
+          "branch": "master",
+          "revision": "8565654a123a0fa5e7969443cc2b13512c6cea33",
+          "version": null
+        }
+      },
+      {
+        "package": "swift-case-paths",
+        "repositoryURL": "https://github.com/pointfreeco/swift-case-paths",
+        "state": {
+          "branch": null,
+          "revision": "a09839348486db8866f85a727b8550be1d671c50",
+          "version": "0.9.1"
+        }
+      },
+      {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections",
+        "state": {
+          "branch": null,
+          "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "swift-composable-architecture",
+        "repositoryURL": "https://github.com/pointfreeco/swift-composable-architecture",
+        "state": {
+          "branch": null,
+          "revision": "0a38f2c860a64a005afeb8a6fe186eb2818c9a3f",
+          "version": "0.38.3"
+        }
+      },
+      {
+        "package": "swift-custom-dump",
+        "repositoryURL": "https://github.com/pointfreeco/swift-custom-dump",
+        "state": {
+          "branch": null,
+          "revision": "21ec1d717c07cea5a026979cb0471dd95c7087e7",
+          "version": "0.5.0"
+        }
+      },
+      {
+        "package": "swift-identified-collections",
+        "repositoryURL": "https://github.com/pointfreeco/swift-identified-collections",
+        "state": {
+          "branch": null,
+          "revision": "2d6b7ffcc67afd9077fac5e5a29bcd6d39b71076",
+          "version": "0.4.0"
+        }
+      },
+      {
+        "package": "xctest-dynamic-overlay",
+        "repositoryURL": "https://github.com/pointfreeco/xctest-dynamic-overlay",
+        "state": {
+          "branch": null,
+          "revision": "ef8e14e7ce1c0c304c644c6ba365d06c468ded6b",
+          "version": "0.3.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

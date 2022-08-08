@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+        <key>NSPhotoLibraryAddUsageDescription</key>
+        <string>需要打开存储到相册权限，保存照片到相册</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>需要打开相册权限，访问相册选择照片</string>
+        <key>NSCameraUsageDescription</key>
+        <string>需要打开相机权限，进行拍照/录像</string>
+	</dict>
+</dict>
+</plist>

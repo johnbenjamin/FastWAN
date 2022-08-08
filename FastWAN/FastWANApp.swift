@@ -11,7 +11,15 @@ import SwiftUI
 struct FastWANApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if UserManager.shared.isLogin {
+                MainPageView()
+            } else {
+                LoginView(store: .init(initialState: .init(),
+                                       reducer: loginReducer,
+                                       environment: .init(
+                                        loginClient: .live,
+                                        mainQueue: DispatchQueue.main.eraseToAnyScheduler())))
+            }
         }
     }
 }
