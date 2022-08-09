@@ -7,22 +7,22 @@
 
 import Foundation
 
-struct UploadTokenModel: Codable {
+struct UploadTokenModel: Codable, Equatable {
     var code: Int
     var info: TokenInfo
     var msg: String
 }
 
-struct TokenInfo: Codable, Hashable {
+struct TokenInfo: Codable, Hashable, Equatable {
     var token: String
 }
 
-struct PrivateTokenModel: Codable {
+struct PrivateTokenModel: Codable, Equatable {
     var code: Int
     var info: PrivateTokenInfo
     var msg: String
 }
 
-struct PrivateTokenInfo: Codable, Hashable {
+struct PrivateTokenInfo: Codable, Hashable, Equatable {
     var url: String
 }

@@ -18,9 +18,7 @@ struct LoginView: View {
     @State private var loginMethod: LoginMethod = .password
     @State private var sendCaptchaText: String = "获取验证码"
     @State private var isCountdowning: Bool = false
-    
     @State private var isPresented = false
-    @State private var isAgreetSign = false
 
     private var userNamePlaceholder: String { loginMethod == .password ? "请输入用户名/手机号" : "请输入手机号" }
     private var userPasswordPlaceholder: String { loginMethod == .password ? "请输入密码" : "请输入验证码" }
@@ -145,13 +143,13 @@ struct LoginView: View {
                     
                     HStack {
                         Button {
-                            isAgreetSign = !isAgreetSign
+                            viewStore.send(LoginAction.agreePolicy)
                         } label: {
-                            Image(isAgreetSign ? "greenhook" : "")
+                            Image(viewStore.isAgree ? "greenhook" : "")
                                 .frame(width: 16, height: 16)
                                 .overlay(content: {
                                     RoundedRectangle(cornerRadius: 8)
-                                        .stroke(isAgreetSign ? .clear : c_7F8398, lineWidth: 1)
+                                        .stroke(viewStore.isAgree ? .clear : c_7F8398, lineWidth: 1)
                                 })
 
                             Text("我已阅读并同意")
@@ -162,7 +160,9 @@ struct LoginView: View {
                         Button("用户协议及私隐条款") {
                             isPresented = true
                         }.adaptiveSheet(isPresented: $isPresented, detents: [.medium()], smallestUndimmedDetentIdentifier: .large, content: {
-                            AgreementAndPrivacyPolicyView()
+                            AgreementAndPrivacyPolicyView(agreeBlock: {
+                                viewStore.send(LoginAction.agreePolicy)
+                            })
                         }).font(.system(size: 12, weight: .bold))
                             .foregroundColor(c_030364)
                     }

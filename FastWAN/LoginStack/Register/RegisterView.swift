@@ -108,7 +108,7 @@ struct RegisterView: View {
                             viewStore.send(RegisterAction.register)
                         } label: {
                             Spacer()
-                            Text("立即注册")
+                            Text(viewStore.pageType == .register ? "立即注册" : "修改密码")
                                 .foregroundColor(viewStore.isUserInputed ? .white : mainColor)
                                 .font(.system(size: 16, weight: .regular))
                             Spacer()
@@ -121,19 +121,21 @@ struct RegisterView: View {
                         .padding(.top, 59)
                     }
                     
-                    HStack {
-                        Spacer()
-                        Button {
-                            presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Text("已有帐号？")
-                                .foregroundColor(c_7F8398)
-                                .font(.system(size: 14, weight: .regular))
-                            + Text("去登录")
-                                .foregroundColor(mainColor)
-                                .font(.system(size: 14, weight: .regular))
-                        }
-                    }.padding(.top, 16)
+                    if viewStore.pageType == .register {
+                        HStack {
+                            Spacer()
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Text("已有帐号？")
+                                    .foregroundColor(c_7F8398)
+                                    .font(.system(size: 14, weight: .regular))
+                                + Text("去登录")
+                                    .foregroundColor(mainColor)
+                                    .font(.system(size: 14, weight: .regular))
+                            }
+                        }.padding(.top, 16)
+                    }
                     Spacer()
                 }.padding(.horizontal, 29)
                     .toolbar {

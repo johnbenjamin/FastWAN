@@ -47,13 +47,14 @@ struct AvatarView: View {
                             viewStore.send(AvatarAction.presentSheet(true))
                         } label: {
                             Image("dot")
-                        }.adaptiveSheet(isPresented: viewStore.binding(\.$isPresentedSheet), detents: [.medium()], smallestUndimmedDetentIdentifier: .large) {
-                            AvatarSettingView(viewStore: viewStore)
                         }
                     }
                 }
             }
-            .adaptiveSheet(isPresented: viewStore.binding(\.$isImagePickerDisplay), detents: [.large()], smallestUndimmedDetentIdentifier: .large, content: {
+            .adaptiveSheet(isPresented: viewStore.binding(\.$isPresentedSheet), detents: [.medium()], smallestUndimmedDetentIdentifier: .large) {
+                AvatarSettingView(viewStore: viewStore)
+            }
+            .sheet(isPresented: viewStore.binding(\.$isImagePickerDisplay), content: {
                 ImagePickerView(selectedImage: viewStore.binding(get: { $0.selectedImage }, send: { AvatarAction.starUpload($0) { token in
                     QNImageUper.imageUpload(image: viewStore.selectedImage, token: token ?? "") { isOK, url in
                         viewStore.send(AvatarAction.uploadAvatarURL(isOK, url ?? ""))
