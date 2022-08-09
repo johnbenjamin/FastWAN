@@ -15,6 +15,7 @@ public enum Environment {
         static let authKey = "Authorization"
         static let defualtAuth = "Bearer 57840b01268cc006c7f529ed9f2bef14"
         static let securityProtocolsURL = "http://wanapi.wesawtech.com/file/terms.html"
+        static let UserPrivacyAgreementURL = "http://wanapi.wesawtech.com/file/security.html"
     }
     
     // MARK: Plist

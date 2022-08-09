@@ -22,9 +22,7 @@ struct StupidUIWebView: UIViewRepresentable {
 
 final class StupidUIWebViewModel: ObservableObject {
 
-    var urlString: String {
-        Environment.ConfigKey.securityProtocolsURL
-    }
+    var urlString: String = ""
 
     let webView: WKWebView
     init() {

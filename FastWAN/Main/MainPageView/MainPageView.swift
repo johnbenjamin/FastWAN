@@ -7,10 +7,13 @@
 
 import SwiftUI
 import QGrid
+import Kingfisher
 
 struct MainPageView: View {
+    private let user = UserManager.shared.userInfo
     private var vpnViewModel = VPNViewModel()
     @State private var selectedThreadInfo: ThreadInfoModel?
+
     @State private var isPresentedThreads: Bool = false
     @State private var isOn: Bool = true {
         didSet {
@@ -129,7 +132,13 @@ struct MainPageView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: UserCenterView()) {
-                        Image("Ali").frame(width: 35, height: 35)
+                        KFImage.url(URL(string: user?.avatar ?? ""))
+                            .placeholder({
+                                Image("Avatar.Default")
+                            })
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .cornerRadius(17.5)
                     }
                 }
             }

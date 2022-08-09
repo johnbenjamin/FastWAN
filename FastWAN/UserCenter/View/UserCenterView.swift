@@ -14,8 +14,7 @@ struct UserCenterView: View {
     private let user = UserManager.shared.userInfo
     private var rowmarks: [UserCenterRowMark] = [UserCenterRowMark(title: "实名认证", state: UserManager.shared.userInfo?.approved == 1 ? "已认证" : "未认证", imageName: "ID.card"),
                                                  UserCenterRowMark(title: "信息安全协议", state: UserManager.shared.userInfo?.approved == 1 ? "已签署" : "未签署", imageName: "Shield"),
-                                                 UserCenterRowMark(title: "帐号管理", imageName: "setting"),
-                                                 UserCenterRowMark(title: "投诉与建议", imageName: "book")]
+                                                 UserCenterRowMark(title: "帐号管理", imageName: "setting")]
     var body: some View {
         NavigationView {
             VStack {
@@ -35,6 +34,7 @@ struct UserCenterView: View {
                             .placeholder({
                                 Image("Avatar.Default")
                             })
+                            .resizable()
                             .frame(width: 81, height: 81)
                                 .cornerRadius(40.5)
 
@@ -53,7 +53,7 @@ struct UserCenterView: View {
                     })
                 }.padding([.leading, .trailing], 16)
                 Spacer(minLength: 29)
-                
+
                 HStack(alignment: .top, content: {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("流量套餐 VIP会员")
@@ -64,7 +64,7 @@ struct UserCenterView: View {
                             .foregroundColor(.white)
                     }.padding(EdgeInsets(top: 19, leading: 15, bottom: 55, trailing: 0))
                     Spacer()
-                    
+
                     NavigationLink {
                         MakeOrderView(store: .init(initialState: .init(), reducer: makeOrderReducer, environment: .init(productsClient: .live, mainQueue: DispatchQueue.main.eraseToAnyScheduler())))
                     } label: {
@@ -79,7 +79,7 @@ struct UserCenterView: View {
                 }).background(mainColor)
                     .cornerRadius(12)
                     .padding([.leading, .trailing], 29)
-                
+
                 ZStack {
                     VisualEffectView(effect: UIBlurEffect(style: .light))
                         .border(.white, width: 1)
@@ -90,11 +90,11 @@ struct UserCenterView: View {
                             cellClick(mark: mark, index: index)
                         } label: {
                             UserCenterRow(rowMark: mark)
-                                .frame(height: 50)
-                                .listRowSeparator(.hidden)
-                                .listRowBackground(Color.clear)
-                                .padding(.leading, 8)
-                        }.background(.clear)
+                        }
+                        .frame(height: 50)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                        .padding(.leading, 8)
                     }.listStyle(PlainListStyle())
                         .padding(.top, 37)
                 }.padding(.top, -37)
@@ -163,7 +163,7 @@ struct UserCenterRow: View {
             Spacer()
             
             if rowMark.state != nil {
-                Text("--")
+                Text(rowMark.state ?? "")
                     .font(.system(size: 14, weight: .regular))
             }
         }

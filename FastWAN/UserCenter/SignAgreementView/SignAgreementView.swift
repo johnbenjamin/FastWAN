@@ -49,6 +49,7 @@ struct SignAgreementView: View {
                     VStack(alignment: .leading) {
                         StupidUIWebView(webView: webViewModel.webView)
                             .onAppear(perform: {
+                                webViewModel.urlString = Environment.ConfigKey.securityProtocolsURL
                                 webViewModel.loadUrl()
                             })
                             .padding(.top, 49)
@@ -74,11 +75,7 @@ struct SignAgreementView: View {
                                 .foregroundColor(c_030364)
                         }
                         
-                        Button("个人信息安全协议-FastWAN") {
-                            isSignPresented = true
-                        }.adaptiveSheet(isPresented: $isSignPresented,  detents: [.medium()],   smallestUndimmedDetentIdentifier: .large, prefersScrollingExpandsWhenScrolledToEdge: false, content:  {
-                            AgreementAndPrivacyPolicyView()
-                        }).font(.system(size: 12, weight: .bold))
+                        Button("个人信息安全协议-FastWAN") {}.font(.system(size: 12, weight: .bold))
                             .foregroundColor(c_030364)
                     }.padding(.top, 8)
                     

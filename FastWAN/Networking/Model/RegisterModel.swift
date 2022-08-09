@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RegisterModel: Codable {
+struct RegisterModel: Codable, Equatable {
     var code: Int
     var info: String
     var msg: String

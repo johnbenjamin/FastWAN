@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
-
-let policy = "我们深知个人信息的重要性，我们将按照法律法规的要求，采取必要的保护措施确保您个人信息的安全。为更好了解我们如何收集、存储、使用您的个人信息以及您在使用我们产品中的权益，请您务必仔细阅读[《用户协议》](www.baidu.com)、[《隐私政策》](www.baidu.com)及[《儿童隐私政策》](www.baidu.com)，其中包括:\n1我们如何收集和使用您的个人信息，特别是您的个人敏感信息;\n2.我们如何共享、转让、公开、披露您的个人信息;\n3.您对于个人信息享有的权利，包括删除、更改、注销等。请您阅读上述协议，并确保您在全面了解、知晓协议内容的情况下点击同意。"
+import ComposableArchitecture
 
 struct AgreementAndPrivacyPolicyView: View {
+    @SwiftUI.Environment(\.presentationMode) var presentationMode
+    var agreeBlock: (() -> ())?
+    var webViewModel = StupidUIWebViewModel()
 
     var body: some View {
         GeometryReader { proxy in
@@ -22,16 +24,16 @@ struct AgreementAndPrivacyPolicyView: View {
                 }
                 Spacer(minLength: 45)
                 
-                Text(policy)
-                    .lineLimit(.max)
-                    .lineSpacing(12)
-                    .foregroundColor(c_7F8398)
-                    .font(.system(size: 16, weight: .medium))
+                StupidUIWebView(webView: webViewModel.webView)
+                    .onAppear {
+                        webViewModel.urlString = Environment.ConfigKey.UserPrivacyAgreementURL
+                        webViewModel.loadUrl()
+                    }
                 Spacer(minLength: 13)
                 
                 HStack(spacing: 11) {
                     Button {
-//                        presentationMode.wrappedValue.dismiss()
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Spacer()
                         Text("不同意")
@@ -44,7 +46,8 @@ struct AgreementAndPrivacyPolicyView: View {
                         .cornerRadius(12)
 
                     Button {
-//                        presentationMode.wrappedValue.dismiss()
+                        if agreeBlock != nil { agreeBlock!() }
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Spacer()
                         Text("同意")

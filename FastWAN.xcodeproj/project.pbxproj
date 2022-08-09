@@ -58,7 +58,6 @@
 		2957E0C0289FBD34007E21DE /* FastWANTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0BF289FBD34007E21DE /* FastWANTests.swift */; };
 		2957E0C3289FBD44007E21DE /* FastWANUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0C1289FBD44007E21DE /* FastWANUITests.swift */; };
 		2957E0C4289FBD44007E21DE /* FastWANUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0C2289FBD44007E21DE /* FastWANUITestsLaunchTests.swift */; };
-		2957E0C7289FC0FD007E21DE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2957E0C5289FBF87007E21DE /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2957E0C9289FE752007E21DE /* PickThreadCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0C8289FE752007E21DE /* PickThreadCore.swift */; };
 		295985A82890395D00922BBE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 295985A72890395D00922BBE /* ComposableArchitecture */; };
 		295B5796288D382C0028E27F /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 295B5795288D382C0028E27F /* QGrid */; };
@@ -72,6 +71,7 @@
 		295BEA9E287DB29C005E8130 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295BEA9D287DB29B005E8130 /* LoginView.swift */; };
 		295F2F332898289E00BA41A1 /* QNImageUper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2F322898289E00BA41A1 /* QNImageUper.swift */; };
 		295F2F352898346900BA41A1 /* UploadTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F2F342898346900BA41A1 /* UploadTokenModel.swift */; };
+		2961888A28A17AEB007C8DC6 /* FuckingCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2961888928A17AEB007C8DC6 /* FuckingCore.swift */; };
 		29684B70289240E700948CB8 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B6F289240E700948CB8 /* RegisterModel.swift */; };
 		29684B732892596700948CB8 /* ProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B722892596700948CB8 /* ProviderError.swift */; };
 		29684B752892598700948CB8 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684B742892598700948CB8 /* Provider.swift */; };
@@ -205,6 +205,7 @@
 		295BEA9D287DB29B005E8130 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		295F2F322898289E00BA41A1 /* QNImageUper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QNImageUper.swift; sourceTree = "<group>"; };
 		295F2F342898346900BA41A1 /* UploadTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTokenModel.swift; sourceTree = "<group>"; };
+		2961888928A17AEB007C8DC6 /* FuckingCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuckingCore.swift; sourceTree = "<group>"; };
 		29684B6F289240E700948CB8 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		29684B722892596700948CB8 /* ProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderError.swift; sourceTree = "<group>"; };
 		29684B742892598700948CB8 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
@@ -244,7 +245,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2957E0C7289FC0FD007E21DE /* XCTest.framework in Frameworks */,
 				29389BA6289399FD00DEFDF2 /* AlertToast in Frameworks */,
 				295985A82890395D00922BBE /* ComposableArchitecture in Frameworks */,
 				295B5796288D382C0028E27F /* QGrid in Frameworks */,
@@ -431,6 +431,7 @@
 			children = (
 				2978DE3D2889AD1E001DD7FD /* SignAgreementView.swift */,
 				2957E0B7289F8031007E21DE /* SignAgreementCore.swift */,
+				2961888928A17AEB007C8DC6 /* FuckingCore.swift */,
 			);
 			path = SignAgreementView;
 			sourceTree = "<group>";
@@ -972,6 +973,7 @@
 				292912C72886E130000C0435 /* Upload_ID_View.swift in Sources */,
 				292912CF2886FCD0000C0435 /* OrderDetailView.swift in Sources */,
 				29389BAE2893CADC00DEFDF2 /* LoginModel.swift in Sources */,
+				2961888A28A17AEB007C8DC6 /* FuckingCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,10 +5,7 @@
 //  Created by Xeon on 2022/8/7.
 //
 
-import Foundation
 import ComposableArchitecture
-import SwiftUI
-import XCTest
 
 struct SignAgreementState: Equatable {
     static func == (lhs: SignAgreementState, rhs: SignAgreementState) -> Bool { false }

@@ -9,13 +9,14 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 
+typealias StringBlock = ((String?) -> ())?
+var uploadBlock: StringBlock?
+
 struct AvatarState: Equatable {
-    static func == (lhs: AvatarState, rhs: AvatarState) -> Bool { false }
     
     var avatarURL: URL? = URL(string: UserManager.shared.userInfo?.avatar_back ?? "")
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     var message: String = ""
-    var uploadBlock: ((String?) -> ())?
 
     @BindableState var selectedImage: UIImage = UIImage()
     @BindableState var isImagePickerDisplay = false
@@ -27,7 +28,7 @@ enum AvatarAction: Equatable, BindableAction {
     
     case presentSheet(Bool)
     case imageActionPick(UIImagePickerController.SourceType)
-    case starUpload(UIImage?, uploadBlock: ((String?) -> ()))
+    case starUpload(UIImage?, uploadBlock: StringBlock)
     case upload(Result<UploadTokenModel, ProviderError>)
     case uploadAvatarURL(Bool, String?)
     case getPrivateTokenResponse(Result<PrivateTokenModel, ProviderError>)
@@ -54,7 +55,7 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
         guard let image = image else {
             return .none
         }
-        state.uploadBlock = block
+        uploadBlock = block
         state.selectedImage = image
         return .concatenate(environment.uploadTokenClient
                                 .uploadTokenClient()
@@ -68,8 +69,8 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
             state.message = response.msg
             return .none
         }
-        guard let block = state.uploadBlock else { return .none }
-        block(response.info.token)
+        guard let block = uploadBlock else { return .none }
+        block!(response.info.token)
         return .none
 
     case .upload(.failure(let error)):

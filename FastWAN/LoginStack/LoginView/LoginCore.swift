@@ -13,9 +13,10 @@ struct LoginState: Equatable {
     @BindableState var isLoading: Bool = false
     @BindableState var isFinishLoad: Bool = false
     @BindableState var LoginSuccess: Bool = false
+    @BindableState var isAgree: Bool = false
     var message: String = ""
     var isUserInputed: Bool {
-        userName.count > 3 && password.count > 5
+        userName.count > 3 && password.count > 5 && isAgree
     }
 }
 
@@ -28,6 +29,7 @@ enum LoginAction: Equatable, BindableAction {
         case password(String)
     }
     
+    case agreePolicy
     case userIput(InputType)
     case login
     case loginResponse(Result<LoginModel, ProviderError>)
@@ -43,6 +45,9 @@ let loginReducer = Reducer<LoginState, LoginAction, LoginEnvironment> { state, a
     struct LoginCancelId: Hashable {}
 
     switch action {
+    case .agreePolicy:
+        state.isAgree = true
+        return .none
     case .userIput(.userName(let userName)):
         state.userName = userName
         return.none
