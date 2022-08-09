@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053669E528A1F9090019122C /* VPNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669D528A1F9090019122C /* VPNHelper.swift */; };
+		053669E628A1F9090019122C /* AirportTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669D628A1F9090019122C /* AirportTool.swift */; };
+		053669E928A1F9090019122C /* default_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 053669DD28A1F9090019122C /* default_config.json */; };
+		053669EB28A1F9090019122C /* PacketTunnelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E028A1F9090019122C /* PacketTunnelMessage.swift */; };
+		053669EC28A1F9090019122C /* VPNViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E128A1F9090019122C /* VPNViewModel.swift */; };
+		053669ED28A1F9090019122C /* VmessEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E228A1F9090019122C /* VmessEndpoint.swift */; };
+		05366A0D28A1FAD40019122C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053669F428A1F94B0019122C /* NetworkExtension.framework */; };
+		05366A1028A1FAD40019122C /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05366A0F28A1FAD40019122C /* PacketTunnelProvider.swift */; };
+		05366A1528A1FAD40019122C /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05366A0C28A1FAD40019122C /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05366A1E28A1FB6F0019122C /* Tun2socks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05366A1D28A1FB6F0019122C /* Tun2socks.framework */; };
+		05366A1F28A1FBCF0019122C /* V2RayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669DE28A1F9090019122C /* V2RayConfig.swift */; };
+		05366A2028A1FBCF0019122C /* VmessEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E228A1F9090019122C /* VmessEndpoint.swift */; };
+		05366A2128A1FBDB0019122C /* PacketTunnelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E028A1F9090019122C /* PacketTunnelMessage.swift */; };
+		05366A2228A206950019122C /* V2RayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669DE28A1F9090019122C /* V2RayConfig.swift */; };
+		05366A2328A207BD0019122C /* ThreadProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295B5798288D388E0028E27F /* ThreadProperty.swift */; };
+		05366A2428A207DF0019122C /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BD128964B6700DEFDF2 /* ProductModel.swift */; };
+		05366A2528A20D220019122C /* default_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 053669DD28A1F9090019122C /* default_config.json */; };
+		05366A2728A2146E0019122C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053669F428A1F94B0019122C /* NetworkExtension.framework */; };
 		292912BB28869E85000C0435 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912BA28869E84000C0435 /* AvatarView.swift */; };
 		292912C02886B42E000C0435 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912BF2886B42E000C0435 /* Color.swift */; };
 		292912C32886C3BC000C0435 /* AdaptiveSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912C22886C3BC000C0435 /* AdaptiveSheet.swift */; };
@@ -74,9 +92,17 @@
 		29AB45B22883F5F500B26E4F /* UserCenterRowMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB45B12883F5F400B26E4F /* UserCenterRowMark.swift */; };
 		29B6097D288BF2A400A8B5ED /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6097C288BF2A400A8B5ED /* Canvas.swift */; };
 		29B60980288BFE2100A8B5ED /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6097F288BFE2100A8B5ED /* MainPageView.swift */; };
+		C67DEC413A9EDACDD37660F6 /* Pods_FastWAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF6C7347E8BD320192D6B5E /* Pods_FastWAN.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		05366A1328A1FAD40019122C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 295BEA66287DACCB005E8130 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05366A0B28A1FAD40019122C;
+			remoteInfo = PacketTunnel;
+		};
 		295BEA7F287DACCE005E8130 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 295BEA66287DACCB005E8130 /* Project object */;
@@ -93,7 +119,47 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		05366A0128A1F94B0019122C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				05366A1528A1FAD40019122C /* PacketTunnel.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05366A1B28A1FB0D0019122C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		02902398047EBBD7E838C498 /* Pods-FastWAN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastWAN.release.xcconfig"; path = "Target Support Files/Pods-FastWAN/Pods-FastWAN.release.xcconfig"; sourceTree = "<group>"; };
+		053669D528A1F9090019122C /* VPNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNHelper.swift; sourceTree = "<group>"; };
+		053669D628A1F9090019122C /* AirportTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportTool.swift; sourceTree = "<group>"; };
+		053669DD28A1F9090019122C /* default_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_config.json; sourceTree = "<group>"; };
+		053669DE28A1F9090019122C /* V2RayConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2RayConfig.swift; sourceTree = "<group>"; };
+		053669E028A1F9090019122C /* PacketTunnelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelMessage.swift; sourceTree = "<group>"; };
+		053669E128A1F9090019122C /* VPNViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNViewModel.swift; sourceTree = "<group>"; };
+		053669E228A1F9090019122C /* VmessEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VmessEndpoint.swift; sourceTree = "<group>"; };
+		053669F428A1F94B0019122C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		05366A0C28A1FAD40019122C /* PacketTunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PacketTunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		05366A0F28A1FAD40019122C /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		05366A1128A1FAD40019122C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05366A1228A1FAD40019122C /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
+		05366A1C28A1FB250019122C /* PacketTunnelDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PacketTunnelDebug.entitlements; sourceTree = "<group>"; };
+		05366A1D28A1FB6F0019122C /* Tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tun2socks.framework; path = FastWAN/SwiftV2Ray/Frameworks/Tun2socks.framework; sourceTree = "<group>"; };
+		05366A2628A2146E0019122C /* FastWAN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FastWAN.entitlements; sourceTree = "<group>"; };
 		292912BA28869E84000C0435 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		292912BF2886B42E000C0435 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		292912C22886C3BC000C0435 /* AdaptiveSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveSheet.swift; sourceTree = "<group>"; };
@@ -160,9 +226,20 @@
 		29AB45B12883F5F400B26E4F /* UserCenterRowMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterRowMark.swift; sourceTree = "<group>"; };
 		29B6097C288BF2A400A8B5ED /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		29B6097F288BFE2100A8B5ED /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		8D13A1C034971AABBF43E92A /* Pods-FastWAN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastWAN.debug.xcconfig"; path = "Target Support Files/Pods-FastWAN/Pods-FastWAN.debug.xcconfig"; sourceTree = "<group>"; };
+		BCF6C7347E8BD320192D6B5E /* Pods_FastWAN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastWAN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		05366A0928A1FAD40019122C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05366A1E28A1FB6F0019122C /* Tun2socks.framework in Frameworks */,
+				05366A0D28A1FAD40019122C /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		295BEA6B287DACCB005E8130 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,7 +249,9 @@
 				295985A82890395D00922BBE /* ComposableArchitecture in Frameworks */,
 				295B5796288D382C0028E27F /* QGrid in Frameworks */,
 				29389BD5289676EA00DEFDF2 /* Qiniu in Frameworks */,
+				05366A2728A2146E0019122C /* NetworkExtension.framework in Frameworks */,
 				29389BD82896770C00DEFDF2 /* Kingfisher in Frameworks */,
+				C67DEC413A9EDACDD37660F6 /* Pods_FastWAN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +272,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053669D328A1F9090019122C /* SwiftV2Ray */ = {
+			isa = PBXGroup;
+			children = (
+				053669D428A1F9090019122C /* Transport */,
+				053669DC28A1F9090019122C /* Config */,
+				053669DF28A1F9090019122C /* Model */,
+			);
+			path = SwiftV2Ray;
+			sourceTree = "<group>";
+		};
+		053669D428A1F9090019122C /* Transport */ = {
+			isa = PBXGroup;
+			children = (
+				053669D528A1F9090019122C /* VPNHelper.swift */,
+				053669D628A1F9090019122C /* AirportTool.swift */,
+			);
+			path = Transport;
+			sourceTree = "<group>";
+		};
+		053669DC28A1F9090019122C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				053669DD28A1F9090019122C /* default_config.json */,
+				053669DE28A1F9090019122C /* V2RayConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		053669DF28A1F9090019122C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				053669E028A1F9090019122C /* PacketTunnelMessage.swift */,
+				053669E128A1F9090019122C /* VPNViewModel.swift */,
+				053669E228A1F9090019122C /* VmessEndpoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05366A0E28A1FAD40019122C /* PacketTunnel */ = {
+			isa = PBXGroup;
+			children = (
+				05366A1C28A1FB250019122C /* PacketTunnelDebug.entitlements */,
+				05366A0F28A1FAD40019122C /* PacketTunnelProvider.swift */,
+				05366A1128A1FAD40019122C /* Info.plist */,
+				05366A1228A1FAD40019122C /* PacketTunnel.entitlements */,
+			);
+			path = PacketTunnel;
+			sourceTree = "<group>";
+		};
 		292912BC2886AED7000C0435 /* PrivacyPolicy */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +365,10 @@
 		29389BA4289399FD00DEFDF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05366A1D28A1FB6F0019122C /* Tun2socks.framework */,
 				2957E0C5289FBF87007E21DE /* XCTest.framework */,
+				BCF6C7347E8BD320192D6B5E /* Pods_FastWAN.framework */,
+				053669F428A1F94B0019122C /* NetworkExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -329,8 +460,10 @@
 				295BEA70287DACCB005E8130 /* FastWAN */,
 				295BEA81287DACCE005E8130 /* FastWANTests */,
 				295BEA8B287DACCF005E8130 /* FastWANUITests */,
+				05366A0E28A1FAD40019122C /* PacketTunnel */,
 				295BEA6F287DACCB005E8130 /* Products */,
 				29389BA4289399FD00DEFDF2 /* Frameworks */,
+				C20590F90FC47E4EBB8E3918 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -340,6 +473,7 @@
 				295BEA6E287DACCB005E8130 /* FastWAN.app */,
 				295BEA7E287DACCE005E8130 /* FastWANTests.xctest */,
 				295BEA88287DACCF005E8130 /* FastWANUITests.xctest */,
+				05366A0C28A1FAD40019122C /* PacketTunnel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,6 +481,8 @@
 		295BEA70287DACCB005E8130 /* FastWAN */ = {
 			isa = PBXGroup;
 			children = (
+				05366A2628A2146E0019122C /* FastWAN.entitlements */,
+				053669D328A1F9090019122C /* SwiftV2Ray */,
 				29684B8D2892C7C600948CB8 /* Info.plist */,
 				29684B7B28925C4C00948CB8 /* Utility */,
 				29F62C47288EF2FE00B31ACC /* Networking */,
@@ -529,20 +665,51 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		C20590F90FC47E4EBB8E3918 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D13A1C034971AABBF43E92A /* Pods-FastWAN.debug.xcconfig */,
+				02902398047EBBD7E838C498 /* Pods-FastWAN.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		295BEA6D287DACCB005E8130 /* FastWAN */ = {
+		05366A0B28A1FAD40019122C /* PacketTunnel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 295BEA92287DACCF005E8130 /* Build configuration list for PBXNativeTarget "FastWAN" */;
+			buildConfigurationList = 05366A1628A1FAD40019122C /* Build configuration list for PBXNativeTarget "PacketTunnel" */;
 			buildPhases = (
-				295BEA6A287DACCB005E8130 /* Sources */,
-				295BEA6B287DACCB005E8130 /* Frameworks */,
-				295BEA6C287DACCB005E8130 /* Resources */,
+				05366A0828A1FAD40019122C /* Sources */,
+				05366A0928A1FAD40019122C /* Frameworks */,
+				05366A0A28A1FAD40019122C /* Resources */,
+				05366A1B28A1FB0D0019122C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = PacketTunnel;
+			productName = PacketTunnel;
+			productReference = 05366A0C28A1FAD40019122C /* PacketTunnel.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		295BEA6D287DACCB005E8130 /* FastWAN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 295BEA92287DACCF005E8130 /* Build configuration list for PBXNativeTarget "FastWAN" */;
+			buildPhases = (
+				0162A2713798BAE532F01CDD /* [CP] Check Pods Manifest.lock */,
+				295BEA6A287DACCB005E8130 /* Sources */,
+				295BEA6B287DACCB005E8130 /* Frameworks */,
+				295BEA6C287DACCB005E8130 /* Resources */,
+				43D23488B435D20A2962A046 /* [CP] Embed Pods Frameworks */,
+				05366A0128A1F94B0019122C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05366A1428A1FAD40019122C /* PBXTargetDependency */,
 			);
 			name = FastWAN;
 			packageProductDependencies = (
@@ -599,9 +766,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					05366A0B28A1FAD40019122C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					295BEA6D287DACCB005E8130 = {
 						CreatedOnToolsVersion = 13.2;
 					};
@@ -640,16 +810,26 @@
 				295BEA6D287DACCB005E8130 /* FastWAN */,
 				295BEA7D287DACCE005E8130 /* FastWANTests */,
 				295BEA87287DACCF005E8130 /* FastWANUITests */,
+				05366A0B28A1FAD40019122C /* PacketTunnel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		05366A0A28A1FAD40019122C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05366A2528A20D220019122C /* default_config.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		295BEA6C287DACCB005E8130 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				295BEA79287DACCE005E8130 /* Preview Assets.xcassets in Resources */,
+				053669E928A1F9090019122C /* default_config.json in Resources */,
 				295BEA76287DACCE005E8130 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,7 +850,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0162A2713798BAE532F01CDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FastWAN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43D23488B435D20A2962A046 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FastWAN/Pods-FastWAN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FastWAN/Pods-FastWAN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FastWAN/Pods-FastWAN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		05366A0828A1FAD40019122C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05366A2128A1FBDB0019122C /* PacketTunnelMessage.swift in Sources */,
+				05366A2428A207DF0019122C /* ProductModel.swift in Sources */,
+				05366A1F28A1FBCF0019122C /* V2RayConfig.swift in Sources */,
+				05366A2028A1FBCF0019122C /* VmessEndpoint.swift in Sources */,
+				05366A1028A1FAD40019122C /* PacketTunnelProvider.swift in Sources */,
+				05366A2328A207BD0019122C /* ThreadProperty.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		295BEA6A287DACCB005E8130 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -685,9 +920,11 @@
 				29AB45A92882AABE00B26E4F /* RegisterView.swift in Sources */,
 				29389BD0289649DE00DEFDF2 /* ProductClient.swift in Sources */,
 				29B60980288BFE2100A8B5ED /* MainPageView.swift in Sources */,
+				053669ED28A1F9090019122C /* VmessEndpoint.swift in Sources */,
 				29AB45AE2883DB1500B26E4F /* UserCenterView.swift in Sources */,
 				295F2F332898289E00BA41A1 /* QNImageUper.swift in Sources */,
 				2975AA242887A578006AD4EC /* MakeOrderView.swift in Sources */,
+				053669EB28A1F9090019122C /* PacketTunnelMessage.swift in Sources */,
 				29684B77289259FF00948CB8 /* Provider+Register.swift in Sources */,
 				2957E0B8289F8031007E21DE /* SignAgreementCore.swift in Sources */,
 				292912CD2886F849000C0435 /* ResetPasswordView.swift in Sources */,
@@ -699,6 +936,7 @@
 				29389BBF28943B7800DEFDF2 /* Provider+User.swift in Sources */,
 				29389BA82893A23600DEFDF2 /* LoginCore.swift in Sources */,
 				29684B70289240E700948CB8 /* RegisterModel.swift in Sources */,
+				05366A2228A206950019122C /* V2RayConfig.swift in Sources */,
 				295BEA74287DACCB005E8130 /* ContentView.swift in Sources */,
 				292912C32886C3BC000C0435 /* AdaptiveSheet.swift in Sources */,
 				295B579E288D7E460028E27F /* ThreadMark.swift in Sources */,
@@ -714,14 +952,17 @@
 				29389BD228964B6700DEFDF2 /* ProductModel.swift in Sources */,
 				29684B752892598700948CB8 /* Provider.swift in Sources */,
 				29B6097D288BF2A400A8B5ED /* Canvas.swift in Sources */,
+				053669E628A1F9090019122C /* AirportTool.swift in Sources */,
 				29389BCE289648C000DEFDF2 /* Provider+Product.swift in Sources */,
 				29389BC62895177A00DEFDF2 /* Upload_ID_Core.swift in Sources */,
 				29684B7D28925C5700948CB8 /* Environment.swift in Sources */,
 				295F2F352898346900BA41A1 /* UploadTokenModel.swift in Sources */,
 				2978DE3E2889AD1E001DD7FD /* SignAgreementView.swift in Sources */,
 				292912C02886B42E000C0435 /* Color.swift in Sources */,
+				053669E528A1F9090019122C /* VPNHelper.swift in Sources */,
 				2957E0B2289E5E70007E21DE /* WebView.swift in Sources */,
 				29389BDB28967AF900DEFDF2 /* MakeOrderCore.swift in Sources */,
+				053669EC28A1F9090019122C /* VPNViewModel.swift in Sources */,
 				295B5799288D388E0028E27F /* ThreadProperty.swift in Sources */,
 				29684B732892596700948CB8 /* ProviderError.swift in Sources */,
 				292912CB2886F7FC000C0435 /* FunctionView.swift in Sources */,
@@ -754,6 +995,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		05366A1428A1FAD40019122C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05366A0B28A1FAD40019122C /* PacketTunnel */;
+			targetProxy = 05366A1328A1FAD40019122C /* PBXContainerItemProxy */;
+		};
 		295BEA80287DACCE005E8130 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 295BEA6D287DACCB005E8130 /* FastWAN */;
@@ -767,6 +1013,68 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		05366A1728A1FAD40019122C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4PFYTTGXR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FastWAN/SwiftV2Ray/Frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnel;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lionzy.v2ray.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05366A1828A1FAD40019122C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4PFYTTGXR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FastWAN/SwiftV2Ray/Frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnel;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lionzy.v2ray.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		295BEA90287DACCF005E8130 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -885,13 +1193,26 @@
 		};
 		295BEA93287DACCF005E8130 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D13A1C034971AABBF43E92A /* Pods-FastWAN.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FastWAN/FastWAN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FastWAN/Preview Content\"";
+				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FastWAN/SwiftV2Ray/Frameworks",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"VPNTYPE=\\\"$(PLUGIN_BUNDLE_ID)\\\"",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FastWAN/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -899,12 +1220,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Modao.FastWAN;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lionzy.v2ray;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -914,13 +1236,22 @@
 		};
 		295BEA94287DACCF005E8130 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02902398047EBBD7E838C498 /* Pods-FastWAN.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FastWAN/FastWAN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FastWAN/Preview Content\"";
+				DEVELOPMENT_TEAM = D4PFYTTGXR;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FastWAN/SwiftV2Ray/Frameworks",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = "VPNTYPE=\\\"$(PLUGIN_BUNDLE_ID)\\\"";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FastWAN/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -928,12 +1259,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Modao.FastWAN;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lionzy.v2ray;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1042,6 +1374,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		05366A1628A1FAD40019122C /* Build configuration list for PBXNativeTarget "PacketTunnel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05366A1728A1FAD40019122C /* Debug */,
+				05366A1828A1FAD40019122C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		295BEA69287DACCB005E8130 /* Build configuration list for PBXProject "FastWAN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

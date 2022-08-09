@@ -7,16 +7,21 @@
 
 import Foundation
 import ComposableArchitecture
+import SwiftUI
 
 struct PickThreadState: Equatable {
     @BindableState var threadList: [ThreadInfoModel] = []
-    var isUserInputed: Bool { (threadList.firstIndex { $0.isSet } != nil) }
+    var selectModel: ThreadInfoModel?
+    var hasSelectedModel: Bool {
+        selectModel != nil
+    }
 }
 
 enum PickThreadAction: BindableAction {
     case getList
-    case response(Result<ThreadProperty, ProviderError>)
+    case response(Result<ThreadModel, ProviderError>)
     case binding(BindingAction<PickThreadState>)
+    case select(ThreadInfoModel)
 }
 
 struct PickThreadEnvironment {
@@ -36,10 +41,14 @@ let threadReducer = Reducer<PickThreadState, PickThreadAction, PickThreadEnviron
                                 .map(PickThreadAction.response)
                                 .cancellable(id: ThreadCancelId()))
     case .response(.success(let response)):
+        state.threadList = response.info
         return .none
     case .response(.failure(_)):
         return .none
     case .binding(_):
+        return .none
+    case .select(let model):
+        state.selectModel = model
         return .none
     }
 }.binding()

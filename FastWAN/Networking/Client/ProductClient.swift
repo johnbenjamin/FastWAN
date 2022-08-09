@@ -13,7 +13,7 @@ struct ProductListClient {
 }
 
 struct ThreadListClient {
-    var threadListClient: () -> Effect<ThreadProperty, ProviderError>
+    var threadListClient: () -> Effect<ThreadModel, ProviderError>
 }
 
 extension ProductListClient {

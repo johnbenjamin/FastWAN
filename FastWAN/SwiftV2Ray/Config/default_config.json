@@ -1,0 +1,75 @@
+{
+    "log": {
+        "loglevel": "warning",
+        "error": "",
+        "access": ""
+    },
+    "dns": {
+        "hosts": {},
+        "servers": []
+    },
+    "inbounds": [{
+        "settings": {
+            "udp": true,
+            "auth": "noauth",
+            "userLevel": 8,
+            "timeout": 360
+        },
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "port": "10808",
+        "sniffing": {
+            "enabled": true,
+            "destOverride": ["http", "tls"]
+        },
+        "tag": "socks"
+    }, {
+        "settings": {
+            "userLevel": 8,
+            "timeout": 360
+        },
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "port": "10809",
+        "tag": "http"
+    }],
+    "routing": {
+        "rules": [{
+            "type": "field",
+            "outboundTag": "dns-out",
+            "network": "udp",
+            "inboundTag": ["socks"],
+            "port": "53"
+        }, {
+            "type": "field",
+            "outboundTag": "proxy",
+            "inboundTag": ["socks"]
+        }],
+        "settings": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": []
+        },
+        "strategy": "rules",
+    },
+    "outbounds": [{
+        "settings": {
+            "vnext": [{
+                "address": "103.44.238.218",
+                "users": [{
+                    "level": 8,
+                    "security": "auto",
+                    "encryption": "",
+                    "id": "",
+                    "flow": "",
+                    "alterId": 64
+                }],
+                "port": 22223
+            }]
+        },
+        "proxySettings": {
+            "tag": "zz"
+        },
+        "protocol": "vmess",
+        "tag": "英国"
+    }]
+}

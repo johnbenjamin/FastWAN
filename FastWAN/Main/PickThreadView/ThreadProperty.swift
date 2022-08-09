@@ -46,11 +46,11 @@ struct ThreadModel: Codable, Equatable {
 }
 
 struct ThreadInfoModel: Codable, Hashable {
-    var address: String
-    var up_id: Int
-    var node_ip_type: String
-    var port: String
-    var tag: String
-    var type: String
-    var isSet: Bool = false
+    var address: String?
+    var up_id: Int?
+    var node_ip_type: String?
+    var port: String?
+    var tag: String?
+    var type: String?
+    var selected: Bool?
 }

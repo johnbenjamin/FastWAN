@@ -14,7 +14,7 @@ extension Provider {
         return Provider.shared.requestAuthorizedPublisher(request)
     }
 
-    func threadList() -> AnyPublisher<ThreadProperty, ProviderError>  {
+    func threadList() -> AnyPublisher<ThreadModel, ProviderError>  {
         let request = Router.getMyConfig.request
         return Provider.shared.requestAuthorizedPublisher(request)
     }
