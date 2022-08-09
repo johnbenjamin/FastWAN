@@ -15,7 +15,7 @@ struct LoginState: Equatable {
     @BindableState var LoginSuccess: Bool = false
     var message: String = ""
     var isUserInputed: Bool {
-        userName.count > 8 && password.count > 7
+        userName.count > 3 && password.count > 5
     }
 }
 

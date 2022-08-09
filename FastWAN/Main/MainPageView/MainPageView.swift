@@ -9,13 +9,25 @@ import SwiftUI
 import QGrid
 
 struct MainPageView: View {
+    private var vpnViewModel = VPNViewModel()
+    @State private var selectedThreadInfo: ThreadInfoModel?
     @State private var isPresentedThreads: Bool = false
-    @State private var isOn: Bool = true
+    @State private var isOn: Bool = true {
+        didSet {
+            if isOn {
+                vpnViewModel.openService(threadInfoModel: selectedThreadInfo) { error in
+                    guard let error = error else { return }
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
     @State private var progress: Float = 0.25
-    @State private var threadPropertys = [ThreadProperty(id: 0, title: "上传速度", descpt: "3521", Unit: "KB/S", imageName: "upload"),
-                           ThreadProperty(id: 1, title: "下载速度", descpt: "3522", Unit: "KB/S", imageName: "download"),
-                           ThreadProperty(id: 2, title: "过期时间", descpt: "22-12-28", Unit: nil, imageName: "expired"),
-                           ThreadProperty(id: 3, title: "套餐余量(GB)", descpt: "2398.6", Unit: "KB/S", imageName: "remaining")
+    @State private var threadPropertys = [
+        ThreadProperty(id: 0, title: "上传速度", descpt: "3521", Unit: "KB/S", imageName: "upload"),
+        ThreadProperty(id: 1, title: "下载速度", descpt: "3522", Unit: "KB/S", imageName: "download"),
+        ThreadProperty(id: 2, title: "过期时间", descpt: "22-12-28", Unit: nil, imageName: "expired"),
+        ThreadProperty(id: 3, title: "套餐余量(GB)", descpt: "2398.6", Unit: "KB/S", imageName: "remaining")
     ]
 
     var body: some View {
@@ -36,7 +48,7 @@ struct MainPageView: View {
                 }
 
                 HStack {
-                    Text("当前线路 I A1 I 香港01")
+                    Text(selectedThreadInfo?.tag ?? "请选择线路")
                         .foregroundColor(c_7F8398)
                         .font(.system(size: 14, weight: .regular))
                         .padding(.leading, 17)
@@ -49,7 +61,18 @@ struct MainPageView: View {
                         Image("Arrow.right2")
                     }
                     .adaptiveSheet(isPresented: $isPresentedThreads, detents: [.medium()], smallestUndimmedDetentIdentifier: .large) {
-                        PickThreadView(store: .init(initialState: .init(), reducer: threadReducer, environment: .init(threadListClient: .live, mainQueue: DispatchQueue.main.eraseToAnyScheduler())))
+                        PickThreadView(
+                            store: .init(
+                                initialState: .init(),
+                                reducer: threadReducer,
+                                environment: .init(
+                                    threadListClient: .live,
+                                    mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                                )
+                            )) { model in
+                                selectedThreadInfo = model
+                                isOn = true
+                            }
                     }
                     .padding(.trailing, 11)
                 }
@@ -72,7 +95,18 @@ struct MainPageView: View {
                         .padding([.top, .bottom], 15)
                     Spacer()
                     
-                    NavigationLink(destination: MakeOrderView(store: .init(initialState: .init(), reducer: makeOrderReducer, environment: .init(productsClient: .live, mainQueue: DispatchQueue.main.eraseToAnyScheduler())))) {
+                    NavigationLink(
+                        destination: MakeOrderView(
+                            store: .init(
+                                initialState: .init(),
+                                reducer: makeOrderReducer,
+                                environment: .init(
+                                    productsClient: .live,
+                                    mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                                )
+                            )
+                        )
+                    ) {
                         Image("Arrow.right2")
                     }.padding(.trailing, 11)
                 }

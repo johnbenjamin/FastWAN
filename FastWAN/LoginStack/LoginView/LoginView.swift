@@ -64,7 +64,7 @@ struct LoginView: View {
                             TextField(userNamePlaceholder, text: viewStore.binding(
                                 get: { $0.userName },
                                 send: { LoginAction.userIput(.userName($0)) }))
-                                .keyboardType(.phonePad)
+                                .keyboardType(.asciiCapable)
                                 .foregroundColor(c_7F8398)
                                 .frame(height: 29, alignment: .center)
                                 .padding()
