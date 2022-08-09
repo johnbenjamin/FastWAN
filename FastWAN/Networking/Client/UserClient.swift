@@ -27,6 +27,10 @@ struct PrivateTokenClient {
     var getPrivateToken: (_ url: String) -> Effect<PrivateTokenModel, ProviderError>
 }
 
+struct VersionClient {
+    var checkVersion: () -> Effect<VersionModel, ProviderError>
+}
+
 extension AvatarClient {
     static let live = AvatarClient.init { avatar in
         Provider.shared.uploadAvatar(avatar: avatar).eraseToEffect()
@@ -54,5 +58,11 @@ extension UploadTokenClient {
 extension PrivateTokenClient {
     static let live = PrivateTokenClient { url in
         Provider.shared.privateToken(url: url).eraseToEffect()
+    }
+}
+
+extension VersionClient {
+    static let live = VersionClient {
+        Provider.shared.version().eraseToEffect()
     }
 }

@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 struct AgreementAndPrivacyPolicyView: View {
     @SwiftUI.Environment(\.presentationMode) var presentationMode
-    var agreeBlock: (() -> ())?
+    var agreeBlock: ((Bool) -> ())?
     var webViewModel = StupidUIWebViewModel()
 
     var body: some View {
@@ -33,6 +33,7 @@ struct AgreementAndPrivacyPolicyView: View {
                 
                 HStack(spacing: 11) {
                     Button {
+                        if agreeBlock != nil { agreeBlock!(false) }
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Spacer()
@@ -46,7 +47,7 @@ struct AgreementAndPrivacyPolicyView: View {
                         .cornerRadius(12)
 
                     Button {
-                        if agreeBlock != nil { agreeBlock!() }
+                        if agreeBlock != nil { agreeBlock!(true) }
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Spacer()

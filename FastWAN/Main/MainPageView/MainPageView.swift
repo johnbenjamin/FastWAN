@@ -8,20 +8,21 @@
 import SwiftUI
 import QGrid
 import Kingfisher
+import ComposableArchitecture
 
 struct MainPageView: View {
     private let user = UserManager.shared.userInfo
-    private var vpnViewModel = VPNViewModel()
+//    private var vpnViewModel = VPNViewModel()
     @State private var selectedThreadInfo: ThreadInfoModel?
 
     @State private var isPresentedThreads: Bool = false
     @State private var isOn: Bool = true {
         didSet {
             if isOn {
-                vpnViewModel.openService(threadInfoModel: selectedThreadInfo) { error in
-                    guard let error = error else { return }
-                    print(error.localizedDescription)
-                }
+//                vpnViewModel.openService(threadInfoModel: selectedThreadInfo) { error in
+//                    guard let error = error else { return }
+//                    print(error.localizedDescription)
+//                }
             }
         }
     }
@@ -33,126 +34,143 @@ struct MainPageView: View {
         ThreadProperty(id: 3, title: "套餐余量(GB)", descpt: "2398.6", Unit: "KB/S", imageName: "remaining")
     ]
 
+    var store: Store<MainPageState, MainPageAction>
+
     var body: some View {
-        NavigationView {
-            VStack {
-                ProgressView(isON: $isOn, progress: progress)
+        WithViewStore(store) { viewStore in
+            NavigationView {
+                VStack {
+                    ProgressView(isON: $isOn, progress: progress)
 
-                HStack {
-                    Spacer()
-                    Image(isOn ? "Switch.white" : "Switch.Gray")
-                        .padding(.all, 11)
-                        .background(isOn ? mainColor : .white)
-                        .cornerRadius(16)
-                        .onTapGesture {
-                            isOn = !isOn
-                            progress += 0.25
-                        }
-                }
-
-                HStack {
-                    Text(selectedThreadInfo?.tag ?? "请选择线路")
-                        .foregroundColor(c_7F8398)
-                        .font(.system(size: 14, weight: .regular))
-                        .padding(.leading, 17)
-                        .padding([.top, .bottom], 15)
-                    Spacer()
-                    
-                    Button {
-                        isPresentedThreads = !isPresentedThreads
-                    } label: {
-                        Image("Arrow.right2")
-                    }
-                    .adaptiveSheet(isPresented: $isPresentedThreads, detents: [.medium()], smallestUndimmedDetentIdentifier: .large) {
-                        PickThreadView(
-                            store: .init(
-                                initialState: .init(),
-                                reducer: threadReducer,
-                                environment: .init(
-                                    threadListClient: .live,
-                                    mainQueue: DispatchQueue.main.eraseToAnyScheduler()
-                                )
-                            )) { model in
-                                selectedThreadInfo = model
-                                isOn = true
+                    HStack {
+                        Spacer()
+                        Image(isOn ? "Switch.white" : "Switch.Gray")
+                            .padding(.all, 11)
+                            .background(isOn ? mainColor : .white)
+                            .cornerRadius(16)
+                            .onTapGesture {
+                                isOn = !isOn
+                                progress += 0.25
                             }
                     }
-                    .padding(.trailing, 11)
-                }
-                    .background(.white)
-                    .cornerRadius(12)
 
-                QGrid(threadPropertys, columns: 2, vSpacing: 8, hSpacing: 8) { property in
-                    ThreadPropertyCell(threadProperty: property)
+                    HStack {
+                        Text(selectedThreadInfo?.tag ?? "请选择线路")
+                            .foregroundColor(c_7F8398)
+                            .font(.system(size: 14, weight: .regular))
+                            .padding(.leading, 17)
+                            .padding([.top, .bottom], 15)
+                        Spacer()
+                        
+                        Button {
+                            isPresentedThreads = !isPresentedThreads
+                        } label: {
+                            Image("Arrow.right2")
+                        }
+                        .adaptiveSheet(isPresented: $isPresentedThreads, detents: [.medium()], smallestUndimmedDetentIdentifier: .large) {
+                            PickThreadView(
+                                store: .init(
+                                    initialState: .init(),
+                                    reducer: threadReducer,
+                                    environment: .init(
+                                        threadListClient: .live,
+                                        mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                                    )
+                                )) { model in
+                                    selectedThreadInfo = model
+                                    isOn = true
+                                }
+                        }
+                        .padding(.trailing, 11)
+                    }
                         .background(.white)
                         .cornerRadius(12)
-                        .frame(height: 77)
-                }.padding([.leading, .trailing], -8)
-                    .frame(height: 185)
 
-                HStack {
-                    Text("套餐充值")
-                        .foregroundColor(c_7F8398)
-                        .font(.system(size: 14, weight: .regular))
-                        .padding(.leading, 17)
-                        .padding([.top, .bottom], 15)
-                    Spacer()
-                    
-                    NavigationLink(
-                        destination: MakeOrderView(
-                            store: .init(
-                                initialState: .init(),
-                                reducer: makeOrderReducer,
-                                environment: .init(
-                                    productsClient: .live,
-                                    mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                    QGrid(threadPropertys, columns: 2, vSpacing: 8, hSpacing: 8) { property in
+                        ThreadPropertyCell(threadProperty: property)
+                            .background(.white)
+                            .cornerRadius(12)
+                            .frame(height: 77)
+                    }.padding([.leading, .trailing], -8)
+                        .frame(height: 185)
+
+                    HStack {
+                        Text("套餐充值")
+                            .foregroundColor(c_7F8398)
+                            .font(.system(size: 14, weight: .regular))
+                            .padding(.leading, 17)
+                            .padding([.top, .bottom], 15)
+                        Spacer()
+                        
+                        NavigationLink(
+                            destination: MakeOrderView(
+                                store: .init(
+                                    initialState: .init(),
+                                    reducer: makeOrderReducer,
+                                    environment: .init(
+                                        productsClient: .live,
+                                        mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                                    )
                                 )
                             )
-                        )
-                    ) {
-                        Image("Arrow.right2")
-                    }.padding(.trailing, 11)
+                        ) {
+                            Image("Arrow.right2")
+                        }.padding(.trailing, 11)
+                    }
+                        .background(.white)
+                        .cornerRadius(12)
                 }
-                    .background(.white)
-                    .cornerRadius(12)
-            }
-            .padding([.leading, .trailing], 16)
-            .background{
-                Image("Main.Backgroud")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("加速器")
-                        .foregroundColor(c_030364)
-                        .font(.system(size: 18, weight: .bold))
+                .padding([.leading, .trailing], 16)
+                .background{
+                    Image("Main.Backgroud")
+                        .resizable()
+                        .edgesIgnoringSafeArea(.all)
                 }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: UserCenterView()) {
-                        KFImage.url(URL(string: user?.avatar ?? ""))
-                            .placeholder({
-                                Image("Avatar.Default")
-                            })
-                            .resizable()
-                            .frame(width: 35, height: 35)
-                            .cornerRadius(17.5)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("加速器")
+                            .foregroundColor(c_030364)
+                            .font(.system(size: 18, weight: .bold))
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: UserCenterView()) {
+                            KFImage.url(URL(string: user?.avatar ?? ""))
+                                .placeholder({
+                                    Image("Avatar.Default")
+                                })
+                                .resizable()
+                                .frame(width: 35, height: 35)
+                                .cornerRadius(17.5)
+                        }
                     }
                 }
             }
+            .onAppear(perform: {
+                viewStore.send(.checkVersion)
+            })
+            .alert(viewStore.version?.content ?? "发现新版本", isPresented: viewStore.binding(\.$isPresentVersionChecker), actions: {
+                Button("升级", role: .destructive) {
+                    guard let url = URL(string: viewStore.version?.url ?? "") else { return }
+                    UIApplication.onOpenURLTap(url) { accepted in }
+                }
+                if (viewStore.version?.forceUpdate ?? false) == false {
+                    Button("稍后", role: .cancel) { }
+                }
+            })
+
         }
     }
 }
 
-struct MainPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            MainPageView()
-        }
-    }
-}
+//struct MainPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            MainPageView()
+//        }
+//    }
+//}
 
 struct ProgressView: View {
     @Binding var isON: Bool

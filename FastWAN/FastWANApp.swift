@@ -12,12 +12,14 @@ struct FastWANApp: App {
     var body: some Scene {
         WindowGroup {
             if UserManager.shared.isLogin {
-                MainPageView()
+                MainPageView(store: .init(initialState: .init(),
+                                          reducer: mainPageReducer,
+                                          environment: .init(checkVersion: .live, mainQueue: DispatchQueue.main.eraseToAnyScheduler())))
             } else {
                 LoginView(store: .init(initialState: .init(),
                                        reducer: loginReducer,
                                        environment: .init(
-                                        loginClient: .live,
+                                        loginClient: .live, checkVersion: .live,
                                         mainQueue: DispatchQueue.main.eraseToAnyScheduler())))
             }
         }

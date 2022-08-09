@@ -13,12 +13,13 @@ struct UserManager {
         static let user = "FastWan_Login"
     }
 
-    private var loginInfo: LoginInfo? {
-        return Storage.retrieve(ConfigKeys.user, from: .documents, as: LoginInfo.self)
-    }
-
+    var hasCkeckedVersion: Bool = false
     var isLogin: Bool { loginInfo?.token != nil }
     
+    private var loginInfo: LoginInfo? = {
+        return Storage.retrieve(ConfigKeys.user, from: .documents, as: LoginInfo.self)
+    }()
+
     var token: String {
         guard let token = loginInfo?.token else { return "Bearer 57840b01268cc006c7f529ed9f2bef14" }
         return "Bearer \(token)"
@@ -26,6 +27,12 @@ struct UserManager {
 
     var userInfo: UserInfo? { loginInfo?.userInfo }
     
+    func uploadUser(avatar: URL) {
+        guard var loginInfo = loginInfo else { return }
+        loginInfo.userInfo?.avatar = avatar.absoluteString
+        loginInfo.userInfo?.avatar_back = avatar.absoluteString
+        save(loginInfo: loginInfo)
+    }
 
     func save(loginInfo: LoginInfo?) {
         guard let info = loginInfo else { return }

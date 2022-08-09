@@ -34,3 +34,20 @@ struct UserInfo: Codable, Hashable {
     var user_uuid: String?
     var username: String?
 }
+
+
+
+
+struct VersionModel: Codable {
+    var code: Int
+    var info: VersionInfo?
+    var msg: String
+}
+
+struct VersionInfo: Codable, Hashable {
+    var content: String?
+    var forceUpdate: Bool = false
+    var url: String?
+    var versionCode: String?
+    var versionName: String?
+}

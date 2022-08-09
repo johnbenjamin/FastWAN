@@ -8,6 +8,7 @@
 import Foundation
 import ComposableArchitecture
 import SwiftUI
+import Kingfisher
 
 typealias StringBlock = ((String?) -> ())?
 var uploadBlock: StringBlock?
@@ -18,15 +19,15 @@ struct AvatarState: Equatable {
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     var message: String = ""
 
-    @BindableState var selectedImage: UIImage = UIImage()
-    @BindableState var isImagePickerDisplay = false
-    @BindableState var isPresentedSheet = false
+    @BindableState var selectedImage: UIImage?
+    @BindableState var isLoading: Bool = false
+    @BindableState var showMessage: Bool = false
 }
 
 enum AvatarAction: Equatable, BindableAction {
     static func == (lhs: AvatarAction, rhs: AvatarAction) -> Bool { false }
     
-    case presentSheet(Bool)
+    case defualtImage(UIImage)
     case imageActionPick(UIImagePickerController.SourceType)
     case starUpload(UIImage?, uploadBlock: StringBlock)
     case upload(Result<UploadTokenModel, ProviderError>)
@@ -47,14 +48,15 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
     struct AvatarCancelId: Hashable {}
 
     switch action {
-    case .presentSheet(let isPresented):
-        state.isPresentedSheet = isPresented
+    case .defualtImage(let defualt):
+        state.selectedImage = defualt
         return .none
 
     case .starUpload(let image, let block):
         guard let image = image else {
             return .none
         }
+        state.isLoading = true
         uploadBlock = block
         state.selectedImage = image
         return .concatenate(environment.uploadTokenClient
@@ -66,7 +68,9 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
 
     case .upload(.success(let response)):
         guard response.code == 200 else {
+            state.isLoading = false
             state.message = response.msg
+            state.showMessage = true
             return .none
         }
         guard let block = uploadBlock else { return .none }
@@ -74,11 +78,16 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
         return .none
 
     case .upload(.failure(let error)):
+        state.isLoading = false
+        state.message = "上传图片失败,请稍后再试"
+        state.showMessage = true
         return .none
 
     case .uploadAvatarURL(let isOK, let url):
         guard isOK, let url = url else {
+            state.isLoading = false
             state.message = "上传图片失败,请稍后再试"
+            state.showMessage = true
             return .none
         }
         return .concatenate(environment.getPrivateToken
@@ -90,6 +99,7 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
         
     case .getPrivateTokenResponse(.success(let response)):
         state.message = response.msg
+        state.avatarURL = URL(string: response.info.url)
         return .concatenate(environment.avatarClient
                                 .uploadAvatar(response.info.url)
                                 .receive(on: environment.mainQueue)
@@ -97,20 +107,23 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
                                 .map(AvatarAction.uploadResponse)
                                 .cancellable(id: AvatarCancelId()))
     case .getPrivateTokenResponse(.failure(_)):
+        state.isLoading = false
         state.message = "网络错误,请稍后再试"
+        state.showMessage = true
         return .none
 
     case .imageActionPick(let sourceType):
         state.sourceType = sourceType
-        state.isPresentedSheet = false
         switch state.sourceType {
-            case .camera:
-            state.isImagePickerDisplay = true
-        case .photoLibrary:
-            state.isImagePickerDisplay = true
+        case .camera: break
+        case .photoLibrary: break
         case .savedPhotosAlbum:
-            state.isImagePickerDisplay = false
-            UIImageWriteToSavedPhotosAlbum(state.selectedImage, nil, nil, nil)
+            if state.selectedImage != nil {
+                UIImageWriteToSavedPhotosAlbum(state.selectedImage!, nil, nil, nil)
+                state.message = "保存成功"
+                state.showMessage = true
+                return .none
+            }
         @unknown default: break
         }
         return .none
@@ -118,7 +131,18 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
     case .binding(_):
         return .none
     
-    case .uploadResponse(_):
+    case .uploadResponse(.success(let response)):
+        state.isLoading = false
+        state.message = response.msg
+        state.showMessage = true
+        if response.code == 200, let avatar = state.avatarURL {
+            UserManager.shared.uploadUser(avatar: avatar)
+        }
+        return .none
+    case .uploadResponse(.failure(_)):
+        state.isLoading = false
+        state.message = "网络错误,请稍后再试"
+        state.showMessage = true
         return .none
     }
 }.binding()

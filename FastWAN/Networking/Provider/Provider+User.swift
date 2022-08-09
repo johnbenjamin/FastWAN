@@ -33,4 +33,9 @@ extension Provider {
         let request = Router.priviteToken(url: url).request
         return Provider.shared.requestAuthorizedPublisher(request)
     }
+
+    func version() -> AnyPublisher<VersionModel, ProviderError> {
+        let request = Router.version.request
+        return Provider.shared.requestAuthorizedPublisher(request)
+    }
 }

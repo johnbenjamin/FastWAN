@@ -18,6 +18,7 @@ struct QNImageUper {
         uploadManager.put(data, key: "", token: token, complete: { info, key, resp in
             if info?.isOK ?? false {
                 complete(true, resp?["hash"] as? String ?? "")
+                return
             }
             complete(false, nil)
         }, option: QNUploadOption.defaultOptions())

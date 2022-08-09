@@ -35,4 +35,8 @@ public enum Environment {
         }
         return url
     }()
+
+    static let versionString: String? = {
+        return infoDictionary["CFBundleShortVersionString"] as? String ?? nil
+    }()
 }

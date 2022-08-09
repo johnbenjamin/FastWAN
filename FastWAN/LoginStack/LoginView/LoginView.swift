@@ -14,7 +14,7 @@ struct LoginView: View {
         case captcha
         case password
     }
-    
+
     @State private var loginMethod: LoginMethod = .password
     @State private var sendCaptchaText: String = "获取验证码"
     @State private var isCountdowning: Bool = false
@@ -143,7 +143,7 @@ struct LoginView: View {
                     
                     HStack {
                         Button {
-                            viewStore.send(LoginAction.agreePolicy)
+                            viewStore.send(LoginAction.agreePolicy(!viewStore.isAgree))
                         } label: {
                             Image(viewStore.isAgree ? "greenhook" : "")
                                 .frame(width: 16, height: 16)
@@ -160,8 +160,9 @@ struct LoginView: View {
                         Button("用户协议及私隐条款") {
                             isPresented = true
                         }.adaptiveSheet(isPresented: $isPresented, detents: [.medium()], smallestUndimmedDetentIdentifier: .large, content: {
-                            AgreementAndPrivacyPolicyView(agreeBlock: {
-                                viewStore.send(LoginAction.agreePolicy)
+                            AgreementAndPrivacyPolicyView(agreeBlock: { agree in
+                                isPresented = false
+                                viewStore.send(LoginAction.agreePolicy(agree))
                             })
                         }).font(.system(size: 12, weight: .bold))
                             .foregroundColor(c_030364)
@@ -179,6 +180,18 @@ struct LoginView: View {
                 }
             }
             .ignoresSafeArea()
+            .onAppear(perform: {
+                viewStore.send(LoginAction.checkVersion)
+            })
+            .alert(viewStore.version?.content ?? "发现新版本", isPresented: viewStore.binding(\.$isPresentVersionChecker), actions: {
+                Button("升级", role: .destructive) {
+                    guard let url = URL(string: viewStore.version?.url ?? "") else { return }
+                    UIApplication.onOpenURLTap(url) { accepted in }
+                }
+                if (viewStore.version?.forceUpdate ?? false) == false {
+                    Button("稍后", role: .cancel) { }
+                }
+            })
             .toast(isPresenting: viewStore.binding(\.$isLoading), tapToDismiss: false,  alert: {
                 AlertToast(type: .loading)
             }, completion: {
@@ -188,7 +201,9 @@ struct LoginView: View {
                 AlertToast(displayMode: .hud, type: .regular, title: viewStore.message)
             } completion: {
                 guard viewStore.LoginSuccess else { return }
-                RootWindow().window?.rootViewController = UIHostingController(rootView: MainPageView())
+                RootWindow().window?.rootViewController = UIHostingController(rootView: MainPageView(store: .init(initialState: .init(),
+                                                                                                                  reducer: mainPageReducer,
+                                                                                                                  environment: .init(checkVersion: .live, mainQueue: DispatchQueue.main.eraseToAnyScheduler()))))
             }
 
         }

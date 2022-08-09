@@ -86,3 +86,14 @@ extension RandomAccessCollection {
         IndexedCollection(base: self)
     }
 }
+
+extension UIApplication {
+    static func onOpenURLTap(_ url: URL, completion: @escaping (_ accepted: Bool) -> Void) {
+        if UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url)
+        completion(true)
+      } else {
+        completion(false)
+      }
+    }
+}

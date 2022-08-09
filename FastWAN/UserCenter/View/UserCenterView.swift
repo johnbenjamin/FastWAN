@@ -102,7 +102,7 @@ struct UserCenterView: View {
                 Button {
                     RootWindow().window?.rootViewController = UIHostingController(rootView: LoginView(store: .init(initialState: .init(),
                                                                                                       reducer: loginReducer,
-                                                                                                      environment: .init(loginClient: .live,
+                                                                                                                   environment: .init(loginClient: .live, checkVersion: .live,
                                                                                                                          mainQueue: DispatchQueue.main.eraseToAnyScheduler()))))
 
                     UserManager.shared.removeLoginData()

@@ -18,6 +18,7 @@ enum Router {
     case uploadSign(url: String)
     case productList(limit: Int, page: Int)
     case getMyConfig
+    case version
 
     case uploadToken
     case priviteToken(url: String)
@@ -51,6 +52,8 @@ extension Router: NetworkRoute {
             return "/upload_token"
         case .priviteToken:
             return "/privite_token"
+        case .version:
+            return "/version"
         }
     }
 
@@ -69,7 +72,8 @@ extension Router: NetworkRoute {
             return .post
 
         case .uploadToken,
-            .getMyConfig:
+            .getMyConfig,
+            .version:
             return .get
         }
     }
@@ -101,6 +105,8 @@ extension Router: NetworkRoute {
             return [:]
         case .priviteToken(let url):
             return ["url": "http://oss.wesaw.cn/\(url)"]
+        case .version:
+            return [:]
         }
     }
 }

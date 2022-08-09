@@ -8,11 +8,16 @@
 import SwiftUI
 import ComposableArchitecture
 import Kingfisher
+import AlertToast
 
 struct AvatarView: View {
     @SwiftUI.Environment(\.presentationMode) var presentationMode
 
     private let user = UserManager.shared.userInfo
+    
+    @State var isPresentedSheet: Bool = false
+    @State var isImagePickerDisplay: Bool = false
+
     var store: Store<AvatarState, AvatarAction>
 
     var body: some View {
@@ -21,6 +26,9 @@ struct AvatarView: View {
                 VStack {
                     Divider().overlay(.white)
                     KFImage.url(URL(string: user?.avatar ?? ""))
+                        .onSuccess({ result in
+                            viewStore.send(AvatarAction.defualtImage(result.image))
+                        })
                         .placeholder {
                             Image("Avatar.Backgourd")
                         }
@@ -44,31 +52,48 @@ struct AvatarView: View {
 
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            viewStore.send(AvatarAction.presentSheet(true))
+                            isPresentedSheet = true
                         } label: {
                             Image("dot")
                         }
                     }
                 }
             }
-            .adaptiveSheet(isPresented: viewStore.binding(\.$isPresentedSheet), detents: [.medium()], smallestUndimmedDetentIdentifier: .large) {
-                AvatarSettingView(viewStore: viewStore)
-            }
-            .sheet(isPresented: viewStore.binding(\.$isImagePickerDisplay), content: {
+            .sheet(isPresented: $isPresentedSheet, content: {
+                AvatarSettingView(viewStore: viewStore) { presentSheet, displayPicker in
+                    isPresentedSheet = presentSheet
+                    isImagePickerDisplay = displayPicker
+                }
+            })
+            .sheet(isPresented: $isImagePickerDisplay, content: {
                 ImagePickerView(selectedImage: viewStore.binding(get: { $0.selectedImage }, send: { AvatarAction.starUpload($0) { token in
-                    QNImageUper.imageUpload(image: viewStore.selectedImage, token: token ?? "") { isOK, url in
+                    guard let image = viewStore.selectedImage else { return }
+                    QNImageUper.imageUpload(image:image, token: token ?? "") { isOK, url in
                         viewStore.send(AvatarAction.uploadAvatarURL(isOK, url ?? ""))
                     }
                 } }), sourceType: viewStore.sourceType)
             })
+//            .toast(isPresenting: viewStore.binding(\.$isLoading), tapToDismiss: false,  alert: {
+//                AlertToast(type: .loading)
+//            }, completion: {
+//
+//            })
+//            .toast(isPresenting: viewStore.binding(\.$showMessage), duration: 2) {
+//                AlertToast(displayMode: .hud, type: .regular, title: viewStore.message)
+//            } completion: {
+//            }
             .navigationBarHidden(true)
         }
     }
 }
 
 struct AvatarSettingView: View {
+    typealias DoubleBoolBlock = ((Bool, Bool) -> ())
+
     var viewStore: ViewStore<AvatarState, AvatarAction>
+    var settingBlock: DoubleBoolBlock
     let list: [String] = ["拍照", "从手机相册选择", "保存图片"]
+
     var body: some View {
         VStack {
             Group {
@@ -85,10 +110,13 @@ struct AvatarSettingView: View {
                             switch text {
                             case "拍照":
                                 viewStore.send(AvatarAction.imageActionPick(.camera))
+                                settingBlock(false, true)
                             case "从手机相册选择":
                                 viewStore.send(AvatarAction.imageActionPick(.photoLibrary))
+                                settingBlock(false, true)
                             case "保存图片":
                                 viewStore.send(AvatarAction.imageActionPick(.savedPhotosAlbum))
+                                settingBlock(false, false)
                             default: break
                             }
                         }
@@ -104,7 +132,7 @@ struct AvatarSettingView: View {
             .padding(.top, 10)
 
             Button {
-                viewStore.send(AvatarAction.presentSheet(false))
+                settingBlock(false, false)
             } label: {
                 Spacer()
                 Text("取消")
