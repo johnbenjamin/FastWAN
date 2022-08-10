@@ -12,17 +12,15 @@ import ComposableArchitecture
 
 struct MainPageView: View {
     private let user = UserManager.shared.userInfo
-//    private var vpnViewModel = VPNViewModel()
     @State private var selectedThreadInfo: ThreadInfoModel?
-
     @State private var isPresentedThreads: Bool = false
     @State private var isOn: Bool = true {
         didSet {
             if isOn {
-//                vpnViewModel.openService(threadInfoModel: selectedThreadInfo) { error in
-//                    guard let error = error else { return }
-//                    print(error.localizedDescription)
-//                }
+                VPNViewModel.shared.openService(threadInfoModel: selectedThreadInfo) { error in
+                    guard let error = error else { return }
+                    print(error.localizedDescription)
+                }
             }
         }
     }

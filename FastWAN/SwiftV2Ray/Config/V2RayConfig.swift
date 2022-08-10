@@ -76,8 +76,8 @@ extension Decodable {
 // MARK: - Log
 struct Log: Codable {
     var loglevel: Level = .info
-    var error: String = ""
-    var access: String = ""
+    var error: String? = ""
+    var access: String? = ""
     
     enum Level: String, Codable {
         case debug
@@ -106,31 +106,26 @@ struct Stats: Codable {
 
 // MARK: - Routing
 struct Routing: Codable {
-    var strategy: String = "rules"
-    var settings: Setting = Setting()
-    
-    struct Setting: Codable {
-        enum domainStrategy: String, Codable {
-            case AsIs
-            case IPIfNonMatch
-            case IPOnDemand
-        }
+    var domainStrategy: domainStrategy = .IPIfNonMatch
+    var rules: [Rule] = [Rule()]
 
-        var domainStrategy: domainStrategy = .IPIfNonMatch
-        var rules: [Rule] = [Rule()]
-        
-        struct Rule: Codable {
-            var type: String? = "field"
-            var domain: [String]? = ["geosite:cn", "geosite:speedtest"]
-            var ip: [String]? = ["geoip:cn", "geoip:private"]
-            var port: String?
-            var network: String?
-            var source: [String]?
-            var user: [String]?
-            var inboundTag: [String]?
-            var `protocol`: [String]? // ["http", "tls", "bittorrent"]
-            var outboundTag: String? = "direct"
-        }
+    enum domainStrategy: String, Codable {
+        case AsIs
+        case IPIfNonMatch
+        case IPOnDemand
+    }
+
+    struct Rule: Codable {
+        var type: String? = "field"
+        var domain: [String]? = ["geosite:cn", "geosite:speedtest"]
+        var ip: [String]? = ["geoip:cn", "geoip:private"]
+        var port: String?
+        var network: String?
+        var source: [String]?
+        var user: [String]?
+        var inboundTag: [String]?
+        var `protocol`: [String]? // ["http", "tls", "bittorrent"]
+        var outboundTag: String? = "direct"
     }
 }
 
@@ -141,7 +136,7 @@ struct Policy: Codable {
 
 // MARK: - Inbound
 struct Inbound: Codable {
-    var port: String = "1080"
+    var port: Int = 1080
     var listen: String = "127.0.0.1"
     var `protocol`: Protocol = .socks
     var tag: String? = nil
@@ -193,7 +188,7 @@ struct Inbound: Codable {
     }
 
     struct Http: Codable {
-        var timeout: Int = 360
+        var timeout: Int? = 360
         var allowTransparent: Bool?
         var userLevel: Int?
         var accounts: [Account]?
@@ -217,7 +212,7 @@ struct Inbound: Codable {
         var accounts: [Account]?
         var udp: Bool = true
         var ip: String?
-        var timeout: Int = 360
+        var timeout: Int? = 360
         var userLevel: Int?
         
         struct Account: Codable {
@@ -251,7 +246,7 @@ struct Inbound: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        port = try container.decode(String.self, forKey: .port)
+        port = try container.decode(Int.self, forKey: .port)
         listen = try container.decode(String.self, forKey: .listen)
         `protocol` = try container.decode(Protocol.self, forKey: .`protocol`)
         
@@ -321,7 +316,7 @@ struct Outbound: Codable {
     }
     
     struct Settings: Codable {
-        var Tag: String?
+        var tag: String?
     }
     
     enum `Protocol`: String, Codable {
@@ -399,10 +394,11 @@ struct Outbound: Codable {
             
             struct User: Codable {
                 var id: String = ""
-                var alterId: Int = 64 // 0-65535
+                var alterId: Int? = 0 // 0-65535
                 var level: Int? = 0
                 var security: Security = .auto
                 var encryption: String? = ""
+                var flow: String? = ""
                 enum Security: String, Codable {
                     case aes128gcm = "aes-128-gcm"
                     case chacha20poly1305 = "chacha20-poly1305"

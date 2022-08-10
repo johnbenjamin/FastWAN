@@ -1,75 +1,84 @@
 {
-    "log": {
-        "loglevel": "warning",
-        "error": "",
-        "access": ""
-    },
-    "dns": {
-        "hosts": {},
-        "servers": []
-    },
-    "inbounds": [{
-        "settings": {
-            "udp": true,
-            "auth": "noauth",
-            "userLevel": 8,
-            "timeout": 360
-        },
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "port": "10808",
-        "sniffing": {
-            "enabled": true,
-            "destOverride": ["http", "tls"]
-        },
-        "tag": "socks"
-    }, {
-        "settings": {
-            "userLevel": 8,
-            "timeout": 360
-        },
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "port": "10809",
-        "tag": "http"
-    }],
     "routing": {
+        "domainStrategy": "IPIfNonMatch",
         "rules": [{
-            "type": "field",
-            "outboundTag": "dns-out",
-            "network": "udp",
+            "port": "53",
             "inboundTag": ["socks"],
-            "port": "53"
+            "outboundTag": "dns-out",
+            "type": "field",
+            "network": "udp"
         }, {
             "type": "field",
             "outboundTag": "proxy",
             "inboundTag": ["socks"]
-        }],
-        "settings": {
-            "domainStrategy": "IPIfNonMatch",
-            "rules": []
+        }]
+    },
+    "inbounds": [{
+        "sniffing": {
+            "enabled": true,
+            "destOverride": ["http", "tls"]
         },
-        "strategy": "rules",
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": {
+            "udp": true,
+            "auth": "noauth",
+            "userLevel": 8
+        },
+        "tag": "socks",
+        "port": 10808
+    }, {
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "settings": {
+            "userLevel": 8
+        },
+        "tag": "http",
+        "port": 10809
+    }],
+    "dns": {
+        "hosts": {},
+        "servers": []
+    },
+    "log": {
+        "loglevel": "warning"
     },
     "outbounds": [{
-        "settings": {
-            "vnext": [{
-                "address": "103.44.238.218",
-                "users": [{
-                    "level": 8,
-                    "security": "auto",
-                    "encryption": "",
-                    "id": "",
-                    "flow": "",
-                    "alterId": 64
-                }],
-                "port": 22223
-            }]
-        },
         "proxySettings": {
             "tag": "zz"
         },
         "protocol": "vmess",
+        "settings": {
+            "vnext": [{
+                "address": "103.44.238.218",
+                "users": [{
+                    "encryption": "",
+                    "id": "cfe079ed-0284-11ed-9650-005056bf05aa",
+                    "level": 8,
+                    "security": "auto",
+                    "flow": "",
+                    "alterId": 0
+                }],
+                "port": 22223
+            }]
+        },
         "tag": "英国"
+    }, {
+        "tag": "zz",
+        "protocol": "vmess",
+        "settings": {
+            "vnext": [{
+                "address": "120.232.174.157",
+                "users": [{
+                    "encryption": "",
+                    "id": "cfe079ed-0284-11ed-9650-005056bf05aa",
+                    "level": 8,
+                    "security": "auto",
+                    "flow": "",
+                    "alterId": 0
+                }],
+                "port": 22223
+            }]
+        }
     }]
 }
