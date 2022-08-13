@@ -11,10 +11,9 @@ import Kingfisher
 import ComposableArchitecture
 
 struct MainPageView: View {
-    private let user = UserManager.shared.userInfo
 //    private var vpnViewModel = VPNViewModel()
+    @State private var avatar: String = UserManager.shared.userInfo?.avatar ?? ""
     @State private var selectedThreadInfo: ThreadInfoModel?
-
     @State private var isPresentedThreads: Bool = false
     @State private var isOn: Bool = true {
         didSet {
@@ -135,12 +134,13 @@ struct MainPageView: View {
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: UserCenterView()) {
-                            KFImage.url(URL(string: user?.avatar ?? ""))
+                        NavigationLink(destination:UserCenterView(avatar: $avatar)) {
+                            KFImage.url(URL(string: avatar))
                                 .placeholder({
                                     Image("Avatar.Default")
                                 })
                                 .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 35, height: 35)
                                 .cornerRadius(17.5)
                         }

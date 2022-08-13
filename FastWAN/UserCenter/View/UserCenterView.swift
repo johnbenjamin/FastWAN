@@ -11,7 +11,8 @@ import Kingfisher
 struct UserCenterView: View {
     @SwiftUI.Environment(\.presentationMode) var presentationMode
 
-    private let user = UserManager.shared.userInfo
+    @Binding var avatar: String
+    private var user: UserInfo? { UserManager.shared.userInfo }
     private var rowmarks: [UserCenterRowMark] = [UserCenterRowMark(title: "实名认证", state: UserManager.shared.userInfo?.approved == 1 ? "已认证" : "未认证", imageName: "ID.card"),
                                                  UserCenterRowMark(title: "信息安全协议", state: UserManager.shared.userInfo?.approved == 1 ? "已签署" : "未签署", imageName: "Shield"),
                                                  UserCenterRowMark(title: "帐号管理", imageName: "setting")]
@@ -20,29 +21,30 @@ struct UserCenterView: View {
             VStack {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(user?.user_nick ?? user?.username ?? "")
+                        Text(user?.userNick ?? user?.username ?? "")
                             .font(.system(size: 18, weight: .regular))
                             .foregroundColor(c_030364)
-                        Text(user?.invite_code ?? "")
+                        Text(user?.inviteCode ?? "")
                             .font(.system(size: 14, weight: .regular))
                             .foregroundColor(c_7F8398)
                     }
                     Spacer(minLength: 29)
                     
                     ZStack(alignment: .bottomTrailing, content: {
-                        KFImage.url(URL(string: user?.avatar ?? ""))
+                        KFImage.url(URL(string: avatar))
                             .placeholder({
                                 Image("Avatar.Default")
                             })
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 81, height: 81)
                                 .cornerRadius(40.5)
 
                         NavigationLink(destination: {
-                            AvatarView(store: .init(initialState: .init(),
+                            AvatarView(avatar: $avatar, store: .init(initialState: .init(),
                                                                               reducer: avatarReducer,
                                                     environment: .init(avatarClient: .live, getPrivateToken: .live, uploadTokenClient: .live,
-                                                                                                 mainQueue: DispatchQueue.main.eraseToAnyScheduler())))
+                                                                       mainQueue: DispatchQueue.main.eraseToAnyScheduler())))
                         }) {
                             Image("pencil")
                                 .frame(width: 12, height: 12)
@@ -149,6 +151,10 @@ struct UserCenterView: View {
             return AnyView(EmptyView())
         }
     }
+
+    init(avatar: Binding<String>) {
+        self._avatar = avatar
+    }
 }
 
 struct UserCenterRow: View {
@@ -171,8 +177,8 @@ struct UserCenterRow: View {
     
 }
 
-struct UserCenterView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserCenterView()
-    }
-}
+//struct UserCenterView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UserCenterView()
+//    }
+//}

@@ -22,7 +22,7 @@ struct Upload_ID_View: View {
                                 Text("请拍摄/上传 ")
                                     .foregroundColor(c_030364)
                                     .font(.system(size: 20, weight: .bold))
-                                + Text(UserManager.shared.userInfo?.user_nick ?? "")
+                                + Text(UserManager.shared.userInfo?.userNick ?? "")
                                     .foregroundColor(c_1ED9AD)
                                     .font(.system(size: 20, weight: .bold))
                                 + Text(" 本人身份证")

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum ToastType: Identifiable {
+    case loading
+    case msg
+
+    var id: Int {
+      hashValue
+    }
+}

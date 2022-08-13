@@ -21,17 +21,17 @@ struct LoginInfo: Codable, Hashable {
 struct UserInfo: Codable, Hashable {
     var approved: Int?
     var avatar: String?
-    var avatar_back: String?
+    var avatarBack: String?
     var balance: Float?
     var email: String?
-    var invite_code: String?
-    var is_super: Int?
-    var last_login_ip: String?
-    var last_login_time: String?
-    var last_try_time: String?
-    var user_nick: String?
-    var user_type: String?
-    var user_uuid: String?
+    var inviteCode: String?
+    var isSuper: Int?
+    var lastLoginIp: String?
+    var lastLoginTime: String?
+    var lastTryTime: String?
+    var userNick: String?
+    var userType: String?
+    var userUuid: String?
     var username: String?
 }
 

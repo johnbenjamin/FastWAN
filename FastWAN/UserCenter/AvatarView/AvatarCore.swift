@@ -8,17 +8,16 @@
 import Foundation
 import ComposableArchitecture
 import SwiftUI
-import Kingfisher
 
 typealias StringBlock = ((String?) -> ())?
 var uploadBlock: StringBlock?
 
 struct AvatarState: Equatable {
-    
-    var avatarURL: URL? = URL(string: UserManager.shared.userInfo?.avatar_back ?? "")
+
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     var message: String = ""
 
+    @BindableState var avatarURLString: String = UserManager.shared.userInfo?.avatar ?? ""
     @BindableState var selectedImage: UIImage?
     @BindableState var isLoading: Bool = false
     @BindableState var showMessage: Bool = false
@@ -96,10 +95,10 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
                                 .catchToEffect()
                                 .map(AvatarAction.getPrivateTokenResponse)
                                 .cancellable(id: AvatarCancelId()))
-        
+
     case .getPrivateTokenResponse(.success(let response)):
         state.message = response.msg
-        state.avatarURL = URL(string: response.info.url)
+        state.avatarURLString = response.info.url
         return .concatenate(environment.avatarClient
                                 .uploadAvatar(response.info.url)
                                 .receive(on: environment.mainQueue)
@@ -118,6 +117,7 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
         case .camera: break
         case .photoLibrary: break
         case .savedPhotosAlbum:
+            state.isLoading = false
             if state.selectedImage != nil {
                 UIImageWriteToSavedPhotosAlbum(state.selectedImage!, nil, nil, nil)
                 state.message = "保存成功"
@@ -135,14 +135,14 @@ let avatarReducer = Reducer<AvatarState, AvatarAction, AvatarEnvironment> { stat
         state.isLoading = false
         state.message = response.msg
         state.showMessage = true
-        if response.code == 200, let avatar = state.avatarURL {
-            UserManager.shared.uploadUser(avatar: avatar)
+        if response.code == 200 {
+            UserManager.shared.uploadUser(avatar: state.avatarURLString)
         }
         return .none
     case .uploadResponse(.failure(_)):
         state.isLoading = false
         state.message = "网络错误,请稍后再试"
-        state.showMessage = true
+        state.showMessage = false
         return .none
     }
 }.binding()

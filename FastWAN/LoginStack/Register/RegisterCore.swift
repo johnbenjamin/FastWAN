@@ -100,7 +100,7 @@ let registerReducer =
           
       case .registerResponse(.success(let register)):
           state.isLoading = false
-          state.message = register.info
+          state.message = register.info ?? ""
           state.registSuccess = register.code == 0 ? true : false
           state.isFinishLoad = true
           return .none

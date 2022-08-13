@@ -9,6 +9,6 @@ import Foundation
 
 struct RegisterModel: Codable, Equatable {
     var code: Int
-    var info: String
+    var info: String?
     var msg: String
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct UserManager {
     static var shared = UserManager()
@@ -15,7 +16,7 @@ struct UserManager {
 
     var hasCkeckedVersion: Bool = false
     var isLogin: Bool { loginInfo?.token != nil }
-    
+
     private var loginInfo: LoginInfo? = {
         return Storage.retrieve(ConfigKeys.user, from: .documents, as: LoginInfo.self)
     }()
@@ -26,12 +27,14 @@ struct UserManager {
     }
 
     var userInfo: UserInfo? { loginInfo?.userInfo }
-    
-    func uploadUser(avatar: URL) {
+
+    func uploadUser(avatar: String) {
         guard var loginInfo = loginInfo else { return }
-        loginInfo.userInfo?.avatar = avatar.absoluteString
-        loginInfo.userInfo?.avatar_back = avatar.absoluteString
+        loginInfo.userInfo?.avatar = avatar
+        loginInfo.userInfo?.avatarBack = avatar
         save(loginInfo: loginInfo)
+        guard let storage = Storage.retrieve(ConfigKeys.user, from: .documents, as: LoginInfo.self) else { return }
+        UserManager.shared.loginInfo = storage
     }
 
     func save(loginInfo: LoginInfo?) {

@@ -7,24 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		053669E528A1F9090019122C /* VPNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669D528A1F9090019122C /* VPNHelper.swift */; };
-		053669E628A1F9090019122C /* AirportTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669D628A1F9090019122C /* AirportTool.swift */; };
-		053669E928A1F9090019122C /* default_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 053669DD28A1F9090019122C /* default_config.json */; };
-		053669EB28A1F9090019122C /* PacketTunnelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E028A1F9090019122C /* PacketTunnelMessage.swift */; };
-		053669EC28A1F9090019122C /* VPNViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E128A1F9090019122C /* VPNViewModel.swift */; };
-		053669ED28A1F9090019122C /* VmessEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E228A1F9090019122C /* VmessEndpoint.swift */; };
-		05366A0D28A1FAD40019122C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053669F428A1F94B0019122C /* NetworkExtension.framework */; };
-		05366A1028A1FAD40019122C /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05366A0F28A1FAD40019122C /* PacketTunnelProvider.swift */; };
-		05366A1528A1FAD40019122C /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05366A0C28A1FAD40019122C /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		05366A1E28A1FB6F0019122C /* Tun2socks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05366A1D28A1FB6F0019122C /* Tun2socks.framework */; };
-		05366A1F28A1FBCF0019122C /* V2RayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669DE28A1F9090019122C /* V2RayConfig.swift */; };
-		05366A2028A1FBCF0019122C /* VmessEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E228A1F9090019122C /* VmessEndpoint.swift */; };
-		05366A2128A1FBDB0019122C /* PacketTunnelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669E028A1F9090019122C /* PacketTunnelMessage.swift */; };
-		05366A2228A206950019122C /* V2RayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053669DE28A1F9090019122C /* V2RayConfig.swift */; };
-		05366A2328A207BD0019122C /* ThreadProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295B5798288D388E0028E27F /* ThreadProperty.swift */; };
-		05366A2428A207DF0019122C /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BD128964B6700DEFDF2 /* ProductModel.swift */; };
-		05366A2528A20D220019122C /* default_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 053669DD28A1F9090019122C /* default_config.json */; };
 		05366A2728A2146E0019122C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053669F428A1F94B0019122C /* NetworkExtension.framework */; };
+		2928EE8D28A2C06C0065F251 /* MainPageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2928EE8C28A2C06C0065F251 /* MainPageStore.swift */; };
 		292912BB28869E85000C0435 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912BA28869E84000C0435 /* AvatarView.swift */; };
 		292912C02886B42E000C0435 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912BF2886B42E000C0435 /* Color.swift */; };
 		292912C32886C3BC000C0435 /* AdaptiveSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292912C22886C3BC000C0435 /* AdaptiveSheet.swift */; };
@@ -51,6 +35,7 @@
 		29389BD5289676EA00DEFDF2 /* Qiniu in Frameworks */ = {isa = PBXBuildFile; productRef = 29389BD4289676EA00DEFDF2 /* Qiniu */; };
 		29389BD82896770C00DEFDF2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 29389BD72896770C00DEFDF2 /* Kingfisher */; };
 		29389BDB28967AF900DEFDF2 /* MakeOrderCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29389BDA28967AF900DEFDF2 /* MakeOrderCore.swift */; };
+		294D2DAF28A407EB00ACF354 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 294D2DAE28A407EB00ACF354 /* ToastUI */; };
 		2957E0B2289E5E70007E21DE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0B1289E5E70007E21DE /* WebView.swift */; };
 		2957E0B4289E74BC007E21DE /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0B3289E74BC007E21DE /* Foundation.swift */; };
 		2957E0B8289F8031007E21DE /* SignAgreementCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957E0B7289F8031007E21DE /* SignAgreementCore.swift */; };
@@ -92,17 +77,9 @@
 		29AB45B22883F5F500B26E4F /* UserCenterRowMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB45B12883F5F400B26E4F /* UserCenterRowMark.swift */; };
 		29B6097D288BF2A400A8B5ED /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6097C288BF2A400A8B5ED /* Canvas.swift */; };
 		29B60980288BFE2100A8B5ED /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B6097F288BFE2100A8B5ED /* MainPageView.swift */; };
-		C67DEC413A9EDACDD37660F6 /* Pods_FastWAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF6C7347E8BD320192D6B5E /* Pods_FastWAN.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		05366A1328A1FAD40019122C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 295BEA66287DACCB005E8130 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05366A0B28A1FAD40019122C;
-			remoteInfo = PacketTunnel;
-		};
 		295BEA7F287DACCE005E8130 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 295BEA66287DACCB005E8130 /* Project object */;
@@ -126,40 +103,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				05366A1528A1FAD40019122C /* PacketTunnel.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05366A1B28A1FB0D0019122C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02902398047EBBD7E838C498 /* Pods-FastWAN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastWAN.release.xcconfig"; path = "Target Support Files/Pods-FastWAN/Pods-FastWAN.release.xcconfig"; sourceTree = "<group>"; };
-		053669D528A1F9090019122C /* VPNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNHelper.swift; sourceTree = "<group>"; };
-		053669D628A1F9090019122C /* AirportTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportTool.swift; sourceTree = "<group>"; };
-		053669DD28A1F9090019122C /* default_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_config.json; sourceTree = "<group>"; };
-		053669DE28A1F9090019122C /* V2RayConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2RayConfig.swift; sourceTree = "<group>"; };
-		053669E028A1F9090019122C /* PacketTunnelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketTunnelMessage.swift; sourceTree = "<group>"; };
-		053669E128A1F9090019122C /* VPNViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNViewModel.swift; sourceTree = "<group>"; };
-		053669E228A1F9090019122C /* VmessEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VmessEndpoint.swift; sourceTree = "<group>"; };
 		053669F428A1F94B0019122C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		05366A0C28A1FAD40019122C /* PacketTunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PacketTunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		05366A0F28A1FAD40019122C /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
-		05366A1128A1FAD40019122C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05366A1228A1FAD40019122C /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
-		05366A1C28A1FB250019122C /* PacketTunnelDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PacketTunnelDebug.entitlements; sourceTree = "<group>"; };
 		05366A1D28A1FB6F0019122C /* Tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tun2socks.framework; path = FastWAN/SwiftV2Ray/Frameworks/Tun2socks.framework; sourceTree = "<group>"; };
 		05366A2628A2146E0019122C /* FastWAN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FastWAN.entitlements; sourceTree = "<group>"; };
+		2928EE8C28A2C06C0065F251 /* MainPageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageStore.swift; sourceTree = "<group>"; };
 		292912BA28869E84000C0435 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		292912BF2886B42E000C0435 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		292912C22886C3BC000C0435 /* AdaptiveSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveSheet.swift; sourceTree = "<group>"; };
@@ -190,7 +145,6 @@
 		2957E0BF289FBD34007E21DE /* FastWANTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastWANTests.swift; sourceTree = "<group>"; };
 		2957E0C1289FBD44007E21DE /* FastWANUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastWANUITests.swift; sourceTree = "<group>"; };
 		2957E0C2289FBD44007E21DE /* FastWANUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastWANUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2957E0C5289FBF87007E21DE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2957E0C8289FE752007E21DE /* PickThreadCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickThreadCore.swift; sourceTree = "<group>"; };
 		295B5798288D388E0028E27F /* ThreadProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadProperty.swift; sourceTree = "<group>"; };
 		295B579B288D7C760028E27F /* PickThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickThreadView.swift; sourceTree = "<group>"; };
@@ -232,15 +186,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		05366A0928A1FAD40019122C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05366A1E28A1FB6F0019122C /* Tun2socks.framework in Frameworks */,
-				05366A0D28A1FAD40019122C /* NetworkExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		295BEA6B287DACCB005E8130 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,7 +196,7 @@
 				29389BD5289676EA00DEFDF2 /* Qiniu in Frameworks */,
 				05366A2728A2146E0019122C /* NetworkExtension.framework in Frameworks */,
 				29389BD82896770C00DEFDF2 /* Kingfisher in Frameworks */,
-				C67DEC413A9EDACDD37660F6 /* Pods_FastWAN.framework in Frameworks */,
+				294D2DAF28A407EB00ACF354 /* ToastUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,55 +217,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		053669D328A1F9090019122C /* SwiftV2Ray */ = {
-			isa = PBXGroup;
-			children = (
-				053669D428A1F9090019122C /* Transport */,
-				053669DC28A1F9090019122C /* Config */,
-				053669DF28A1F9090019122C /* Model */,
-			);
-			path = SwiftV2Ray;
-			sourceTree = "<group>";
-		};
-		053669D428A1F9090019122C /* Transport */ = {
-			isa = PBXGroup;
-			children = (
-				053669D528A1F9090019122C /* VPNHelper.swift */,
-				053669D628A1F9090019122C /* AirportTool.swift */,
-			);
-			path = Transport;
-			sourceTree = "<group>";
-		};
-		053669DC28A1F9090019122C /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				053669DD28A1F9090019122C /* default_config.json */,
-				053669DE28A1F9090019122C /* V2RayConfig.swift */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		053669DF28A1F9090019122C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				053669E028A1F9090019122C /* PacketTunnelMessage.swift */,
-				053669E128A1F9090019122C /* VPNViewModel.swift */,
-				053669E228A1F9090019122C /* VmessEndpoint.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		05366A0E28A1FAD40019122C /* PacketTunnel */ = {
-			isa = PBXGroup;
-			children = (
-				05366A1C28A1FB250019122C /* PacketTunnelDebug.entitlements */,
-				05366A0F28A1FAD40019122C /* PacketTunnelProvider.swift */,
-				05366A1128A1FAD40019122C /* Info.plist */,
-				05366A1228A1FAD40019122C /* PacketTunnel.entitlements */,
-			);
-			path = PacketTunnel;
-			sourceTree = "<group>";
-		};
 		292912BC2886AED7000C0435 /* PrivacyPolicy */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				05366A1D28A1FB6F0019122C /* Tun2socks.framework */,
-				2957E0C5289FBF87007E21DE /* XCTest.framework */,
 				BCF6C7347E8BD320192D6B5E /* Pods_FastWAN.framework */,
 				053669F428A1F94B0019122C /* NetworkExtension.framework */,
 			);
@@ -451,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				29B6097F288BFE2100A8B5ED /* MainPageView.swift */,
+				2928EE8C28A2C06C0065F251 /* MainPageStore.swift */,
 			);
 			path = MainPageView;
 			sourceTree = "<group>";
@@ -461,7 +357,6 @@
 				295BEA70287DACCB005E8130 /* FastWAN */,
 				295BEA81287DACCE005E8130 /* FastWANTests */,
 				295BEA8B287DACCF005E8130 /* FastWANUITests */,
-				05366A0E28A1FAD40019122C /* PacketTunnel */,
 				295BEA6F287DACCB005E8130 /* Products */,
 				29389BA4289399FD00DEFDF2 /* Frameworks */,
 				C20590F90FC47E4EBB8E3918 /* Pods */,
@@ -474,7 +369,6 @@
 				295BEA6E287DACCB005E8130 /* FastWAN.app */,
 				295BEA7E287DACCE005E8130 /* FastWANTests.xctest */,
 				295BEA88287DACCF005E8130 /* FastWANUITests.xctest */,
-				05366A0C28A1FAD40019122C /* PacketTunnel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -483,7 +377,6 @@
 			isa = PBXGroup;
 			children = (
 				05366A2628A2146E0019122C /* FastWAN.entitlements */,
-				053669D328A1F9090019122C /* SwiftV2Ray */,
 				29684B8D2892C7C600948CB8 /* Info.plist */,
 				29684B7B28925C4C00948CB8 /* Utility */,
 				29F62C47288EF2FE00B31ACC /* Networking */,
@@ -678,24 +571,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		05366A0B28A1FAD40019122C /* PacketTunnel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 05366A1628A1FAD40019122C /* Build configuration list for PBXNativeTarget "PacketTunnel" */;
-			buildPhases = (
-				05366A0828A1FAD40019122C /* Sources */,
-				05366A0928A1FAD40019122C /* Frameworks */,
-				05366A0A28A1FAD40019122C /* Resources */,
-				05366A1B28A1FB0D0019122C /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PacketTunnel;
-			productName = PacketTunnel;
-			productReference = 05366A0C28A1FAD40019122C /* PacketTunnel.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		295BEA6D287DACCB005E8130 /* FastWAN */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 295BEA92287DACCF005E8130 /* Build configuration list for PBXNativeTarget "FastWAN" */;
@@ -710,7 +585,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				05366A1428A1FAD40019122C /* PBXTargetDependency */,
 			);
 			name = FastWAN;
 			packageProductDependencies = (
@@ -719,6 +593,7 @@
 				29389BA5289399FD00DEFDF2 /* AlertToast */,
 				29389BD4289676EA00DEFDF2 /* Qiniu */,
 				29389BD72896770C00DEFDF2 /* Kingfisher */,
+				294D2DAE28A407EB00ACF354 /* ToastUI */,
 			);
 			productName = FastWAN;
 			productReference = 295BEA6E287DACCB005E8130 /* FastWAN.app */;
@@ -770,9 +645,6 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					05366A0B28A1FAD40019122C = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
 					295BEA6D287DACCB005E8130 = {
 						CreatedOnToolsVersion = 13.2;
 					};
@@ -803,6 +675,7 @@
 				29389BA328938DE900DEFDF2 /* XCRemoteSwiftPackageReference "AlertToast" */,
 				29389BD3289676E900DEFDF2 /* XCRemoteSwiftPackageReference "objc-sdk" */,
 				29389BD62896770C00DEFDF2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				294D2DAD28A407EA00ACF354 /* XCRemoteSwiftPackageReference "ToastUI" */,
 			);
 			productRefGroup = 295BEA6F287DACCB005E8130 /* Products */;
 			projectDirPath = "";
@@ -811,26 +684,16 @@
 				295BEA6D287DACCB005E8130 /* FastWAN */,
 				295BEA7D287DACCE005E8130 /* FastWANTests */,
 				295BEA87287DACCF005E8130 /* FastWANUITests */,
-				05366A0B28A1FAD40019122C /* PacketTunnel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		05366A0A28A1FAD40019122C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05366A2528A20D220019122C /* default_config.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		295BEA6C287DACCB005E8130 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				295BEA79287DACCE005E8130 /* Preview Assets.xcassets in Resources */,
-				053669E928A1F9090019122C /* default_config.json in Resources */,
 				295BEA76287DACCE005E8130 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -894,19 +757,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		05366A0828A1FAD40019122C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05366A2128A1FBDB0019122C /* PacketTunnelMessage.swift in Sources */,
-				05366A2428A207DF0019122C /* ProductModel.swift in Sources */,
-				05366A1F28A1FBCF0019122C /* V2RayConfig.swift in Sources */,
-				05366A2028A1FBCF0019122C /* VmessEndpoint.swift in Sources */,
-				05366A1028A1FAD40019122C /* PacketTunnelProvider.swift in Sources */,
-				05366A2328A207BD0019122C /* ThreadProperty.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		295BEA6A287DACCB005E8130 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -921,11 +771,9 @@
 				29AB45A92882AABE00B26E4F /* RegisterView.swift in Sources */,
 				29389BD0289649DE00DEFDF2 /* ProductClient.swift in Sources */,
 				29B60980288BFE2100A8B5ED /* MainPageView.swift in Sources */,
-				053669ED28A1F9090019122C /* VmessEndpoint.swift in Sources */,
 				29AB45AE2883DB1500B26E4F /* UserCenterView.swift in Sources */,
 				295F2F332898289E00BA41A1 /* QNImageUper.swift in Sources */,
 				2975AA242887A578006AD4EC /* MakeOrderView.swift in Sources */,
-				053669EB28A1F9090019122C /* PacketTunnelMessage.swift in Sources */,
 				29684B77289259FF00948CB8 /* Provider+Register.swift in Sources */,
 				2957E0B8289F8031007E21DE /* SignAgreementCore.swift in Sources */,
 				292912CD2886F849000C0435 /* ResetPasswordView.swift in Sources */,
@@ -937,12 +785,12 @@
 				29389BBF28943B7800DEFDF2 /* Provider+User.swift in Sources */,
 				29389BA82893A23600DEFDF2 /* LoginCore.swift in Sources */,
 				29684B70289240E700948CB8 /* RegisterModel.swift in Sources */,
-				05366A2228A206950019122C /* V2RayConfig.swift in Sources */,
 				295BEA74287DACCB005E8130 /* ContentView.swift in Sources */,
 				292912C32886C3BC000C0435 /* AdaptiveSheet.swift in Sources */,
 				295B579E288D7E460028E27F /* ThreadMark.swift in Sources */,
 				292912BB28869E85000C0435 /* AvatarView.swift in Sources */,
 				2975AA2728885365006AD4EC /* PackageMark.swift in Sources */,
+				2928EE8D28A2C06C0065F251 /* MainPageStore.swift in Sources */,
 				29389BBA2894180900DEFDF2 /* Onboarding.swift in Sources */,
 				295B579C288D7C760028E27F /* PickThreadView.swift in Sources */,
 				2957E0C9289FE752007E21DE /* PickThreadCore.swift in Sources */,
@@ -953,17 +801,14 @@
 				29389BD228964B6700DEFDF2 /* ProductModel.swift in Sources */,
 				29684B752892598700948CB8 /* Provider.swift in Sources */,
 				29B6097D288BF2A400A8B5ED /* Canvas.swift in Sources */,
-				053669E628A1F9090019122C /* AirportTool.swift in Sources */,
 				29389BCE289648C000DEFDF2 /* Provider+Product.swift in Sources */,
 				29389BC62895177A00DEFDF2 /* Upload_ID_Core.swift in Sources */,
 				29684B7D28925C5700948CB8 /* Environment.swift in Sources */,
 				295F2F352898346900BA41A1 /* UploadTokenModel.swift in Sources */,
 				2978DE3E2889AD1E001DD7FD /* SignAgreementView.swift in Sources */,
 				292912C02886B42E000C0435 /* Color.swift in Sources */,
-				053669E528A1F9090019122C /* VPNHelper.swift in Sources */,
 				2957E0B2289E5E70007E21DE /* WebView.swift in Sources */,
 				29389BDB28967AF900DEFDF2 /* MakeOrderCore.swift in Sources */,
-				053669EC28A1F9090019122C /* VPNViewModel.swift in Sources */,
 				295B5799288D388E0028E27F /* ThreadProperty.swift in Sources */,
 				29684B732892596700948CB8 /* ProviderError.swift in Sources */,
 				292912CB2886F7FC000C0435 /* FunctionView.swift in Sources */,
@@ -997,11 +842,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		05366A1428A1FAD40019122C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05366A0B28A1FAD40019122C /* PacketTunnel */;
-			targetProxy = 05366A1328A1FAD40019122C /* PBXContainerItemProxy */;
-		};
 		295BEA80287DACCE005E8130 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 295BEA6D287DACCB005E8130 /* FastWAN */;
@@ -1015,68 +855,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		05366A1728A1FAD40019122C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D4PFYTTGXR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/FastWAN/SwiftV2Ray/Frameworks",
-				);
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PacketTunnel/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnel;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lionzy.v2ray.PacketTunnel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		05366A1828A1FAD40019122C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D4PFYTTGXR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/FastWAN/SwiftV2Ray/Frameworks",
-				);
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PacketTunnel/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnel;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lionzy.v2ray.PacketTunnel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		295BEA90287DACCF005E8130 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1197,7 +975,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D13A1C034971AABBF43E92A /* Pods-FastWAN.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastWAN/FastWAN.entitlements;
@@ -1240,7 +1017,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02902398047EBBD7E838C498 /* Pods-FastWAN.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastWAN/FastWAN.entitlements;
@@ -1376,15 +1152,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05366A1628A1FAD40019122C /* Build configuration list for PBXNativeTarget "PacketTunnel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				05366A1728A1FAD40019122C /* Debug */,
-				05366A1828A1FAD40019122C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		295BEA69287DACCB005E8130 /* Build configuration list for PBXProject "FastWAN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1448,6 +1215,14 @@
 				kind = branch;
 			};
 		};
+		294D2DAD28A407EA00ACF354 /* XCRemoteSwiftPackageReference "ToastUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quanshousio/ToastUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		295985A62890395D00922BBE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -1481,6 +1256,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 29389BD62896770C00DEFDF2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		294D2DAE28A407EB00ACF354 /* ToastUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 294D2DAD28A407EA00ACF354 /* XCRemoteSwiftPackageReference "ToastUI" */;
+			productName = ToastUI;
 		};
 		295985A72890395D00922BBE /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
