@@ -19,6 +19,7 @@ enum ProxyMode: Int {
 
 @available(iOS 13.0, *)
 class VPNViewModel: ObservableObject, Codable {
+    static var shared = VPNViewModel()
     @Published var serviceOpen: Bool = false
     @Published var subscribeUrl: URL? = nil
     @Published var serviceEndPoints: [VmessEndpoint] = []
@@ -131,9 +132,8 @@ class VPNViewModel: ObservableObject, Codable {
     
     func updateConfig(_ threadInfoModel: ThreadInfoModel? = nil) {
         guard let threadInfoModel = threadInfoModel else { return }
-        var vnext = Outbound.VMess.Item()
-        vnext.address = threadInfoModel.address ?? ""
-        vnext.port = Int(threadInfoModel.port ?? "") ?? 0
-        self.v2rayConfig.outbounds?[0].settingVMess?.vnext = [vnext]
+        self.v2rayConfig.outbounds?[0].settingVMess?.vnext[0].users[0].id = "cfe079ed-0284-11ed-9650-005056bf05aa"
+        self.v2rayConfig.outbounds?[0].settingVMess?.vnext[0].address = threadInfoModel.address ?? ""
+        self.v2rayConfig.outbounds?[0].settingVMess?.vnext[0].port =  Int(threadInfoModel.port ?? "") ?? 0
     }
 }

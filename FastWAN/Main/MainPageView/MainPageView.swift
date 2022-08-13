@@ -13,15 +13,16 @@ import ComposableArchitecture
 struct MainPageView: View {
 //    private var vpnViewModel = VPNViewModel()
     @State private var avatar: String = UserManager.shared.userInfo?.avatar ?? ""
+
     @State private var selectedThreadInfo: ThreadInfoModel?
     @State private var isPresentedThreads: Bool = false
     @State private var isOn: Bool = true {
         didSet {
             if isOn {
-//                vpnViewModel.openService(threadInfoModel: selectedThreadInfo) { error in
-//                    guard let error = error else { return }
-//                    print(error.localizedDescription)
-//                }
+                VPNViewModel.shared.openService(threadInfoModel: selectedThreadInfo) { error in
+                    guard let error = error else { return }
+                    print(error.localizedDescription)
+                }
             }
         }
     }

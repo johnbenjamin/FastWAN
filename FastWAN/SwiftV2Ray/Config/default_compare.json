@@ -1,0 +1,80 @@
+{
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [{
+            "port": "53",
+            "inboundTag": ["socks"],
+            "outboundTag": "dns-out",
+            "type": "field",
+            "network": "udp"
+        }, {
+            "type": "field",
+            "outboundTag": "proxy",
+            "inboundTag": ["socks"]
+        }]
+    },
+    "inbounds": [{
+        "sniffing": {
+            "enabled": true,
+            "destOverride": ["http", "tls"]
+        },
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": {
+            "udp": true,
+            "auth": "noauth",
+            "userLevel": 8
+        },
+        "tag": "socks",
+        "port": 10808
+    }, {
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "settings": {
+            "userLevel": 8
+        },
+        "tag": "http",
+        "port": 10809
+    }],
+    "dns": {
+        "hosts": {},
+        "servers": []
+    },
+    "log": {
+        "loglevel": "warning"
+    },
+    "outbounds": [{
+        "proxySettings": {},
+        "protocol": "vmess",
+        "settings": {
+            "vnext": [{
+                "address": "103.44.238.218",
+                "users": [{
+                    "encryption": "",
+                    "id": "cfe079ed-0284-11ed-9650-005056bf05aa",
+                    "level": 8,
+                    "security": "auto",
+                    "flow": ""
+                }],
+                "port": 22223
+            }]
+        },
+        "tag": "英国"
+    }, {
+        "tag": "zz",
+        "protocol": "vmess",
+        "settings": {
+            "vnext": [{
+                "address": "120.232.174.157",
+                "users": [{
+                    "encryption": "",
+                    "id": "cfe079ed-0284-11ed-9650-005056bf05aa",
+                    "level": 8,
+                    "security": "auto",
+                    "flow": ""
+                }],
+                "port": 22223
+            }]
+        }
+    }]
+}
