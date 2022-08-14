@@ -19,10 +19,10 @@ struct MainPageView: View {
     @State private var isOn: Bool = true {
         didSet {
             if isOn {
-                VPNViewModel.shared.openService(threadInfoModel: selectedThreadInfo) { error in
-                    guard let error = error else { return }
-                    print(error.localizedDescription)
-                }
+//                VPNViewModel.shared.openService(threadInfoModel: selectedThreadInfo) { error in
+//                    guard let error = error else { return }
+//                    print(error.localizedDescription)
+//                }
             }
         }
     }

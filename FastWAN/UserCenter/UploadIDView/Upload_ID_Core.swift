@@ -18,6 +18,7 @@ struct Upload_ID_State: Equatable {
     static func == (lhs: Upload_ID_State, rhs: Upload_ID_State) -> Bool { false }
     
     var idCardEndType: IDCardEnd = .cardFrond
+    var sourceType: UIImagePickerController.SourceType = .photoLibrary
     var cardFrond: UIImage?
     var cardBack: UIImage?
     var cardBackendURL: String = ""
@@ -51,18 +52,20 @@ struct Upload_ID_State: Equatable {
         !cardFrontURL.isEmpty && !cardBackendURL.isEmpty && !idCardNo.isEmpty && !realName.isEmpty && isCheckBox
     }
 
-    @BindableState var isImagePickerDisplay = false
+    @BindableState var isLoading: Bool = false
+    @BindableState var showMessage: Bool = false
 }
 
 enum Upload_ID_Action: Equatable, BindableAction {
     static func == (lhs: Upload_ID_Action, rhs: Upload_ID_Action) -> Bool { false }
 
     enum InputType {
-        case idNumber(Int)
+        case idNumber(String)
         case realName(String)
     }
 
     case pick(IDCardEnd)
+    case imageActionPick(UIImagePickerController.SourceType)
     case input(InputType)
     case takePhoto(UIImage?, uploadBlock: ((String?) -> ())?)
     case upload(Result<UploadTokenModel, ProviderError>)
@@ -87,10 +90,15 @@ let uploadIDReducer = Reducer<Upload_ID_State, Upload_ID_Action, Upload_ID_Envir
     switch action {
     case .pick(let idCardEnd):
         state.idCardEndType = idCardEnd
-        state.isImagePickerDisplay = true
         return .none
+    
+    case .imageActionPick(let sourceType):
+        state.sourceType = sourceType
+        return .none
+
     case .takePhoto(let image, let block):
         guard let image = image else { return .none }
+        state.isLoading = true
         state.uploadBlock = block
         switch state.idCardEndType {
         case .cardFrond:
@@ -107,17 +115,24 @@ let uploadIDReducer = Reducer<Upload_ID_State, Upload_ID_Action, Upload_ID_Envir
     case .upload(.success(let response)):
         guard response.code == 200 else {
             state.message = response.msg
+            state.isLoading = false
+            state.showMessage = true
             return .none
         }
         guard let block = state.uploadBlock else { return .none }
         block(response.info.token)
         return .none
     case .upload(.failure(let error)):
+        state.message = "网络错误,请稍后再试"
+        state.isLoading = false
+        state.showMessage = true
         return .none
     
     case .uploadAvatarURL(let isOK, let url):
         guard isOK, let url = url else {
             state.message = "上传图片失败,请稍后再试"
+            state.isLoading = false
+            state.showMessage = true
             return .none
         }
         return .concatenate(environment.getPrivateToken
@@ -128,6 +143,9 @@ let uploadIDReducer = Reducer<Upload_ID_State, Upload_ID_Action, Upload_ID_Envir
                                 .cancellable(id: IDCancelId()))
 
     case .getPrivateTokenResponse(.success(let response)):
+        state.message = response.msg
+        state.isLoading = false
+        state.showMessage = true
         switch state.idCardEndType {
         case .cardFrond:
             state.cardFrontURL = response.info.url
@@ -136,9 +154,13 @@ let uploadIDReducer = Reducer<Upload_ID_State, Upload_ID_Action, Upload_ID_Envir
         }
         return .none
     case .getPrivateTokenResponse(.failure(_)):
+        state.message = "网络错误,请稍后再试"
+        state.isLoading = false
+        state.showMessage = true
         return .none
         
     case .send:
+        state.showMessage = false
         return .concatenate(environment.uploadIDClient
                                 .uploadID(state.cardBackendURL, state.cardFrontURL, state.idCardNo, state.realName)
                                 .receive(on: environment.mainQueue)
@@ -148,9 +170,15 @@ let uploadIDReducer = Reducer<Upload_ID_State, Upload_ID_Action, Upload_ID_Envir
         )
 
     case .uploadResponse(.success(let response)):
+        state.message = response.msg
+        state.isLoading = false
+        state.showMessage = true
         return .none
 
     case .uploadResponse(.failure(let error)):
+        state.message = "网络错误,请稍后再试"
+        state.isLoading = false
+        state.showMessage = true
         return .none
 
     case .binding(_):
@@ -158,7 +186,7 @@ let uploadIDReducer = Reducer<Upload_ID_State, Upload_ID_Action, Upload_ID_Envir
     case .input(let input):
         switch input {
         case .idNumber(let number):
-            state.idCardNo = "\(number)"
+            state.idCardNo = number
             return .none
         case .realName(let realName):
             state.realName = realName

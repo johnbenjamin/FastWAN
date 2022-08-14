@@ -12,6 +12,9 @@ struct SignAgreementState: Equatable {
     
     var message: String = ""
     var uploadBlock: ((String?) -> ())?
+
+    @BindableState var showMessage: Bool = false
+    @BindableState var isLoading: Bool = false
 }
 
 enum SignAgreementAction: Equatable, BindableAction {
@@ -37,6 +40,7 @@ let uploadSignReducer = Reducer<SignAgreementState, SignAgreementAction, SignAgr
 
     switch action {
     case .uploadSign(let block):
+        state.isLoading = true
         state.uploadBlock = block
         return .concatenate(environment.uploadTokenClient
                                 .uploadTokenClient()
@@ -47,6 +51,8 @@ let uploadSignReducer = Reducer<SignAgreementState, SignAgreementAction, SignAgr
     case .getUploadToken(.success(let response)):
         guard response.code == 200 else {
             state.message = response.msg
+            state.isLoading = false
+            state.showMessage = true
             return .none
         }
         guard let block = state.uploadBlock else { return .none }
@@ -54,10 +60,14 @@ let uploadSignReducer = Reducer<SignAgreementState, SignAgreementAction, SignAgr
         return .none
     case .getUploadToken(.failure(let error)):
         state.message = "网络错误,请稍后再试"
+        state.isLoading = false
+        state.showMessage = true
         return .none
     case .uploadSignURL(let isOK, let url):
         guard isOK, let url = url else {
             state.message = "上传图片失败,请稍后再试"
+            state.isLoading = false
+            state.showMessage = true
             return .none
         }
         return .concatenate(environment.getPrivateToken
@@ -76,16 +86,24 @@ let uploadSignReducer = Reducer<SignAgreementState, SignAgreementAction, SignAgr
                                 .cancellable(id: UPloadSignCancelId()))
     case .getPrivateTokenResponse(.failure(let error)):
         state.message = "网络错误,请稍后再试"
+        state.isLoading = false
+        state.showMessage = true
         return .none
 
     case .uploadResponse(.success(let response)):
+        state.isLoading = false
         if response.code == 200 {
             state.message = "提交成功"
+            state.showMessage = true
+            return .none
         }
         state.message = response.msg
+        state.showMessage = true
         return .none
     case .uploadResponse(.failure(let error)):
         state.message = "网络错误,请稍后再试"
+        state.isLoading = false
+        state.showMessage = true
         return .none
 
     case .binding(_):

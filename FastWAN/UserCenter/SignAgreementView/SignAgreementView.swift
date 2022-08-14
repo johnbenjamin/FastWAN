@@ -8,6 +8,7 @@
 import SwiftUI
 import PencilKit
 import ComposableArchitecture
+import ToastUI
 
 struct SignAgreementView: View {
     @SwiftUI.Environment(\.presentationMode) var presentationMode
@@ -167,8 +168,15 @@ struct UserSignatureView: View {
                     .background(mainColor)
                     .cornerRadius(12)
                     .padding(.trailing, 29)
+                    .toast(isPresented: viewStore.binding(\.$isLoading), content: {
+                        ToastView("Loading...").toastViewStyle(.indeterminate)
+                    })
+                    .toast(isPresented: viewStore.binding(\.$showMessage), dismissAfter: 2.0, content: {
+                        ToastView(viewStore.message).toastViewStyle(.information)
+                    })
                 }
-            }.navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
 
         }
     }
